@@ -1,0 +1,3 @@
+<%@ jet package="hikari.test.generated" class="HelloJet" %>
+<% String arg = (String)argument; %>
+Hello, JET. <%= arg %>
