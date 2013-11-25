@@ -27,10 +27,10 @@ public class DBConnection {
         Connection connection = DriverManager.getConnection(config.getUrl(), config.getUser(),
                 config.getPassword());
 
-        // TODO DB毎接続用の別クラスがある
+        // DB毎接続用の別クラスがある
         IDatabaseConnection dc = new DatabaseConnection(connection, config.getSchema());
-        // IDatabaseConnection dc = new OracleConnection(connection,
-        // config.schema);
+//        new OracleConnection(connection, config.getSchema());
+//        new H2Connection(connection, config.getSchema());
         return dc;
     }
 
