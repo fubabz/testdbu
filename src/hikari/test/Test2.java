@@ -1,5 +1,6 @@
 package hikari.test;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -7,14 +8,15 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.dbunit.Assertion;
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.DataSetException;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.excel.XlsDataSetWriter;
+import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.operation.DatabaseOperation;
 import org.dbunit.util.fileloader.DataFileLoader;
-import org.dbunit.util.fileloader.FlatXmlDataFileLoader;
 import org.dbunit.util.fileloader.XlsDataFileLoader;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,7 +38,7 @@ public class Test2 {
     public void testLoadXml() throws DatabaseUnitException, Exception {
         logger.info("testLoadXml開始");
 
-        IDataSet ds = loadXml("/data2.xml");
+        IDataSet ds = loadXml("/data2.xml", "/dtd.xml");
 
         XlsDataSetWriter writer = new XlsDataSetWriter();
         writer.write(ds, new FileOutputStream("target/out.xls"));
@@ -46,6 +48,16 @@ public class Test2 {
         } finally {
             connection.close();
         }
+    }
+
+    @Test
+    public void testAssertXml() throws DatabaseUnitException, Exception {
+        logger.info("開始");
+
+        IDataSet ds = loadXml("/data2.xml", "/dtd.xml");
+        IDataSet ds2 = loadXml("data3.xml", "/dtd.xml");
+
+        Assertion.assertEquals(ds, ds2);
     }
 
     @Test
@@ -66,16 +78,20 @@ public class Test2 {
         }
     }
 
-    private IDataSet loadXml(String name) throws DataSetException, FileNotFoundException {
+    private IDataSet loadXml(String name, String dtdName) throws DataSetException, IOException {
         // クラスパスへ置く。/はトップレベル
-        IDataSet ds = new FlatXmlDataFileLoader().load(name);
-//        IDataSet ds2 = new FlatXmlDataSetBuilder().build(new FileInputStream(name));
+        // IDataSet ds = new FlatXmlDataFileLoader().load(name);
 
+        IDataSet ds = new FlatXmlDataSetBuilder().setMetaDataSetFromDtd(
+                getClass().getResourceAsStream(dtdName)).build(
+                getClass().getResourceAsStream(name));
+        // IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new
+        // File("expectedDataSet.xml"));
         return ds;
     }
 
     private IDataSet loadXls(String name) {
-//        IDataSet ds2 = new XlsDataSet(new File(name));
+        // IDataSet ds2 = new XlsDataSet(new File(name));
 
         DataFileLoader loader = new XlsDataFileLoader();
         Map<String, Object> replace = new HashMap<String, Object>();
