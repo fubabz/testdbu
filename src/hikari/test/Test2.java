@@ -1,7 +1,5 @@
 package hikari.test;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -17,6 +15,7 @@ import org.dbunit.dataset.excel.XlsDataSetWriter;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.operation.DatabaseOperation;
 import org.dbunit.util.fileloader.DataFileLoader;
+import org.dbunit.util.fileloader.FlatXmlDataFileLoader;
 import org.dbunit.util.fileloader.XlsDataFileLoader;
 import org.junit.Before;
 import org.junit.Test;
@@ -82,9 +81,15 @@ public class Test2 {
         // クラスパスへ置く。/はトップレベル
         // IDataSet ds = new FlatXmlDataFileLoader().load(name);
 
-        IDataSet ds = new FlatXmlDataSetBuilder().setMetaDataSetFromDtd(
-                getClass().getResourceAsStream(dtdName)).build(
-                getClass().getResourceAsStream(name));
+        FlatXmlDataSetBuilder builder = new FlatXmlDataSetBuilder()
+                .setMetaDataSetFromDtd(getClass().getResourceAsStream(dtdName));
+        FlatXmlDataFileLoader loader = new FlatXmlDataFileLoader(builder);
+
+        Map<String, Object> replace = new HashMap<String, Object>();
+        replace.put("[null]", null);
+        loader.addReplacementObjects(replace);
+
+        IDataSet ds = loader.load(name);
         // IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new
         // File("expectedDataSet.xml"));
         return ds;
