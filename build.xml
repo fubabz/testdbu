@@ -4,8 +4,12 @@
         <pathelement location="${basedir}/resources" />
         <fileset dir="lib" includes="*.jar" />
     </path>
-    <property resource="h2.properties" classpathref="classpath" />
-    <property name="maven.repo.local" location="/opt/mavenRepository" />
+	<!-- プロパティファイルはANT起動時に指定する -->
+<!--    <property resource="serverlocation.properties" classpathref="classpath" />-->
+<!--    <property resource="serverlookup.properties" classpathref="classpath" />-->
+<!--    <property resource="location2.properties" classpathref="classpath" />-->
+<!--    <property resource="lookup.properties" classpathref="classpath" />-->
+    <!--<property name="maven.repo.local" location="c:\Users\sakuma\.m2\repository\" />-->
     <target name="mvn-init" unless="compile.classpath" xmlns:artifact="urn:maven-artifact-ant">
         <typedef resource="org/apache/maven/artifact/ant/antlib.xml"
             uri="urn:maven-artifact-ant" classpath="lib/maven-ant-tasks-2.1.3.jar" />
@@ -33,7 +37,7 @@
             <localRepository refid="local.repository" />
         </artifact:dependencies>
     </target>
-    <target name="copy-mvn-lib" depends="mvn-init">
+    <target name="copy-mvn-lib" depends="mvn-init" description="maven管理ライブラリをlibへコピーする">
         <copy todir="lib" flatten="true">
             <fileset refid="runtime.fileset" />
         </copy>
@@ -47,38 +51,59 @@
     </queryset>
     <target name="refresh-xls" description="excelからrefresh">
         <dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}"
-            password="${db.password}" classpathref="classpath">
+            password="${db.password}" schema="${db.schema}" classpathref="classpath">
             <dbconfig>
                 <property name="datatypeFactory" value="${db.datatype}" />
             </dbconfig>
             <operation type="REFRESH" format="xls"
-                src="${basedir}/resources/data1.xls" nullToken="[null]" />
+                src="${file.xls}" nullToken="[null]" />
         </dbunit>
     </target>
+    <target name="refresh" description="flatxmlからrefresh">
+	    <dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}"
+        password="${db.password}" schema="${db.schema}" classpathref="classpath">
+        <dbconfig>
+            <property name="datatypeFactory" value="${db.datatype}" />
+        </dbconfig>
+        <operation type="REFRESH" format="flat"
+            src="${file.flat}" nullToken="[null]" />
+    		</dbunit>
+	</target>
+    <target name="clean_insert" description="flatxmlからrefresh">
+	    <dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}"
+        password="${db.password}" schema="${db.schema}" classpathref="classpath">
+        <dbconfig>
+            <property name="datatypeFactory" value="${db.datatype}" />
+        </dbconfig>
+        <operation type="CLEAN_INSERT" format="flat"
+            src="${file.flat}" nullToken="[null]" />
+    		</dbunit>
+	</target>
     <target name="export" description="xmlでエクスポート">
         <dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}"
-            password="${db.password}" classpathref="classpath">
+            password="${db.password}" schema="${db.schema}" classpathref="classpath">
             <dbconfig>
                 <property name="datatypeFactory" value="${db.datatype}" />
             </dbconfig>
-            <export dest="export.xml">
-                <query name="T1name" sql="SELECT name FROM T1" />
+            <export dest="${file.flat.out}" doctype="${file.dtd}"><!--
+                <query name="authname" sql="SELECT * FROM auth" />
                 <queryset refid="set1">
                     <filterset>
                         <filter token="id" value="1000" />
                     </filterset>
                 </queryset>
-                <table name="T1" />
+                <table name="location" />
+                -->
             </export>
         </dbunit>
     </target>
-    <target name="exportdtd">
+    <target name="exportdtd" description="DTDをエクスポート">
         <dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}"
-            password="${db.password}" classpathref="classpath">
+            password="${db.password}" schema="${db.schema}" classpathref="classpath">
             <dbconfig>
                 <property name="datatypeFactory" value="${db.datatype}" />
             </dbconfig>
-            <export format="dtd" dest="dtd.xml" />
+            <export format="dtd" dest="${file.dtd}" />
         </dbunit>
     </target>
 </project>
