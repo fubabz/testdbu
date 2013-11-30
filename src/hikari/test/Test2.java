@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import org.dbunit.Assertion;
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.database.IDatabaseConnection;
-import org.dbunit.dataset.DataSetException;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.ITable;
 import org.dbunit.dataset.excel.XlsDataSetWriter;

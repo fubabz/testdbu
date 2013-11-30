@@ -4,11 +4,8 @@
 package hikari.test;
 
 import java.io.FileInputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
 
 import org.dbunit.database.DatabaseConfig;
-import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.ReplacementDataSet;
 import org.dbunit.dataset.excel.XlsDataSet;
