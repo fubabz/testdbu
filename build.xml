@@ -2,13 +2,11 @@
 <project name="database" default="" basedir=".">
     <path id="classpath">
         <pathelement location="${basedir}/resources" />
-        <fileset dir="lib" includes="*.jar" />
+    	<!-- mvn dependency:copy-dependencies -->
+    	<!-- maven-ant-task, dbunit 用 -->
+        <fileset dir="target/dependency" includes="*.jar" />
     </path>
 	<!-- プロパティファイルはANT起動時に指定する -->
-<!--    <property resource="serverlocation.properties" classpathref="classpath" />-->
-<!--    <property resource="serverlookup.properties" classpathref="classpath" />-->
-<!--    <property resource="location2.properties" classpathref="classpath" />-->
-<!--    <property resource="lookup.properties" classpathref="classpath" />-->
     <!--<property name="maven.repo.local" location="c:\Users\sakuma\.m2\repository\" />-->
     <target name="mvn-init" unless="compile.classpath" xmlns:artifact="urn:maven-artifact-ant">
         <typedef resource="org/apache/maven/artifact/ant/antlib.xml"
