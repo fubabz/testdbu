@@ -1,4 +1,4 @@
-/target
 /lib
 /dtd.xml
 /export.xml
+target/
