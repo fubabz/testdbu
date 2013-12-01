@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="1.0">
+	<!--<ivy-module version="1.0" xmlns="http://ant.apache.org/ivy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="file:///opt/Java/ivy.xsd"> -->
+	<info organisation="fam.hikari" module="MODULE" />
+	<configurations>
+		<conf name="compile" />
+		<conf name="runtime" extends="compile" />
+		<conf name="test" extends="compile" />
+	</configurations>
+	<dependencies defaultconf="compile-&gt;default">
+		<dependency org="org.apache.maven" name="maven-ant-tasks"
+			rev="latest.integration" conf="compile-&gt;default" />
+	</dependencies>
+</ivy-module>
