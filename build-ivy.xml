@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="setup libraries" xmlns:ivy="antlib:org.apache.ivy.ant"
 	xmlns="antlib:org.apache.tools.ant" default="retrieve">
-	<property name="ivy.install.version" value="2.1.0-rc2" />
+	<property name="ivy.install.version" value="2.3.0" />
 	<condition property="ivy.home" value="${env.IVY_HOME}">
 		<isset property="env.IVY_HOME" />
 	</condition>
-	<!--<property name="ivy.home" value="${basedir}" />-->
-	<property name="ivy.home" value="${user.home}/.ant" />
+	<!-- マシン毎 ivy.home に ivysettings.xml を置く -->
+	<!--<property name="ivy.home" value="${user.home}/.ant" />-->
+	<property name="ivy.home" value="/opt/Java" />
 	<property name="ivy.jar.dir" value="${ivy.home}/lib" />
 	<property name="ivy.jar.file" value="${ivy.jar.dir}/ivy.jar" />
 
-	<setproxy proxyhost="proxy001.use-ebisu.co.jp" proxyport="8080"/>
+	<!--<setproxy proxyhost="" proxyport=""/>-->
 	<target name="download-ivy" unless="offline">
 		<mkdir dir="${ivy.jar.dir}" />
 		<!-- download Ivy from web site so that it can be used even without any 
@@ -33,7 +34,7 @@
 	</target>
 
 	<target name="retrieve" depends="init-ivy" description="依存ライブラリをダウンロード">
-		<ivy:settings file="${basedir}/ivysettings.xml" />
+		<ivy:settings file="${ivy.home}/ivysettings.xml" />
 		<ivy:retrieve />
 	</target>
 
