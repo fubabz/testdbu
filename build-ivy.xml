@@ -42,6 +42,5 @@
 
 	<target name="clean" description="依存ライブラリを削除">
 		<delete dir="lib" />
-
 	</target>
 </project>
