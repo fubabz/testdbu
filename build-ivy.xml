@@ -6,10 +6,10 @@
 		<isset property="env.IVY_HOME" />
 	</condition>
 	<!-- マシン毎 ivy.home に ivysettings.xml を置く -->
-	<!--<property name="ivy.home" value="${user.home}/.ant" />-->
-	<property name="ivy.home" value="/opt/Java" />
+	<property name="ivy.home" value="${user.home}/.ant" />
 	<property name="ivy.jar.dir" value="${ivy.home}/lib" />
 	<property name="ivy.jar.file" value="${ivy.jar.dir}/ivy.jar" />
+	<setproxy proxyhost="proxy001.use-ebisu.co.jp" proxyport="8080"/>
 
 	<!--<setproxy proxyhost="" proxyport=""/>-->
 	<target name="download-ivy" unless="offline">
