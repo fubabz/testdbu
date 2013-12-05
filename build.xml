@@ -72,7 +72,7 @@
 				nullToken="[null]" />
 		</dbunit>
 	</target>
-	<target name="clean_insert" depends="dbunit-init" description="flatxmlからrefresh">
+	<target name="clean_insert" depends="dbunit-init" description="flatxmlからclean_insert">
 		<dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}"
 			password="${db.password}" schema="${db.schema}" classpathref="compile.classpath">
 			<dbconfig>
@@ -80,6 +80,16 @@
 			</dbconfig>
 			<operation type="CLEAN_INSERT" format="flat"
 				src="${in.dir}/${file.flat}" nullToken="[null]" />
+		</dbunit>
+	</target>
+	<target name="clean_insert-xls" depends="dbunit-init" description="xlsからclean_insert">
+		<dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}"
+			password="${db.password}" schema="${db.schema}" classpathref="compile.classpath">
+			<dbconfig>
+				<property name="datatypeFactory" value="${db.datatype}" />
+			</dbconfig>
+			<operation type="CLEAN_INSERT" format="xls"
+				src="${in.dir}/${file.xls}" nullToken="[null]" />
 		</dbunit>
 	</target>
 	<target name="export" depends="dbunit-init" description="xmlでエクスポート">
