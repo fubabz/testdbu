@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE dataset SYSTEM "lookup.dtd">
+<dataset>
+	<auth user_id="ishikawa" user_password="use-ebisu" pass_expire_date="9999-12-31 00:00:00.0"
+		user_family_name="石川" user_given_name="&#24184;&#22826;&#37070;" user_phone="1234567"
+		ng_count="0" lock_state="false" create_date="2013-10-15 00:00:00.0" create_by="ooi"
+		update_date="2013-11-21 13:31:04.475" update_by="ishikawa" />
+	<auth user_id="sakuma" user_password="sakuma" pass_expire_date="9999-12-31 23:00:00.0"
+		user_family_name="&#20304;&#20037;&#38291;" user_given_name="&#33391;" user_phone="1234567"
+		user_email_address="sakuma@local" ng_count="0" lock_state="false" create_date="2013-08-28 00:00:00.0"
+		create_by="sakuma" update_date="2013-11-21 10:18:16.566" update_by="sakuma" />
+	<auth user_id="sakuma2" user_password="sakuma" pass_expire_date="2014-02-09 17:55:32.896"
+		contract_id="       " saas_mst_id="1" user_family_name="佐久間" user_given_name="良"
+		ng_count="0" lock_state="false" create_date="2013-11-11 17:55:39.162" create_by="sakuma"
+		update_date="2013-11-21 19:47:44.964" update_by="sakuma" />
+	<auth user_id="sakuma9" user_password="sakuma" pass_expire_date="2014-02-09 17:55:32.896"
+		contract_id="T000900" saas_mst_id="[null]" user_family_name="佐久間" user_given_name="良"
+		ng_count="0" lock_state="false" create_date="2013-11-11 17:55:39.162" create_by="sakuma"
+		update_date="2013-11-21 19:47:44.964" update_by="sakuma" />
+	<contract_mst contract_id="T000020" location_id="1" create_date="2013-10-01 00:00:00.0"
+		create_by="sakuma" update_date="2013-10-01 00:00:00.0" update_by="sakuma" />
+	<contract_mst contract_id="T000021" location_id="2" create_date="2013-10-01 00:00:00.0"
+		create_by="sakuma" update_date="2013-10-01 00:00:00.0" update_by="sakuma" />
+	<contract_mst contract_id="T000900" location_id="9" create_date="2013-10-01 00:00:00.0"
+		create_by="sakuma" update_date="2013-10-01 00:00:00.0" update_by="sakuma" />
+	<location location_id="1" server_name="server" db_type="00" db_ip_address="192.168.204.182"
+		db_port="5432" db_name="application" db_user_id="postgres" db_password="use-ebisu" create_date="2013-09-10 00:00:00.0"
+		create_by="sakuma" update_date="2013-09-10 00:00:00.0" update_by="sakuma" />
+	<location location_id="2" server_name="local" db_type="00" db_ip_address="localhost"
+		db_port="5432" db_name="application" db_user_id="postgres" db_password="root" create_date="2013-09-10 00:00:00.0"
+		create_by="sakuma" update_date="2013-09-10 00:00:00.0" update_by="sakuma" />
+	<!-- <location location_id="9" server_name="invalid password" db_type="00" db_ip_address="localhost"
+		db_port="5432" db_name="application" db_user_id="postgres" db_password="xxxx" create_date="2013-09-10 00:00:00.0"
+		create_by="sakuma" update_date="2013-09-10 00:00:00.0" update_by="sakuma" /> -->
+	<log log_id="00" operation_date="2013-09-10 00:00:00.0" />
+	<role_auth role_id="00" auth_id="000" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="00" auth_id="101" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="00" auth_id="103" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="00" auth_id="105" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="00" auth_id="201" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="00" auth_id="203" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="00" auth_id="301" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="00" auth_id="303" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="00" auth_id="305" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="00" auth_id="402" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="00" auth_id="501" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="00" auth_id="503" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="00" auth_id="701" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="00" auth_id="703" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="20" auth_id="000" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="20" auth_id="104" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="20" auth_id="300" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="20" auth_id="302" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="20" auth_id="304" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="20" auth_id="400" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="20" auth_id="401" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="20" auth_id="500" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="20" auth_id="502" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="30" auth_id="000" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="30" auth_id="104" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="30" auth_id="202" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="30" auth_id="302" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="30" auth_id="304" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="30" auth_id="401" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="30" auth_id="502" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="30" auth_id="700" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="30" auth_id="702" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="30" auth_id="704" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="000" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="100" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="102" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="104" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="200" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="202" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="300" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="302" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="304" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="400" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="401" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="500" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="502" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="600" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="601" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="700" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="702" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="40" auth_id="704" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="50" auth_id="000" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="50" auth_id="104" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="50" auth_id="202" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="50" auth_id="302" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="50" auth_id="304" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="50" auth_id="401" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="50" auth_id="502" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="50" auth_id="700" create_date="2013-11-09 10:28:55.536" create_by=""
+		update_date="2013-11-09 10:28:55.536" update_by="" />
+	<role_auth role_id="50" auth_id="702" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="50" auth_id="704" create_date="2013-10-15 13:25:46.276" create_by=""
+		update_date="2013-10-15 13:25:46.276" update_by="" />
+	<role_auth role_id="90" auth_id="999" create_date="2013-10-28 00:00:00.0" create_by="sakuma"
+		update_date="2013-10-28 10:11:24.433" update_by="sakuma" />
+	<saas_mst saas_mst_id="1" saas_name="SAMPLE SAAS" create_date="2013-09-27 00:00:00.0"
+		create_by="ooi" update_date="2013-09-27 00:00:00.0" update_by="ooi" />
+	<saas_mst saas_mst_id="2" saas_name="e-&#12473;&#12465;&#12472;&#12517;&#12540;&#12521;&#12540;"
+		create_date="2013-09-27 00:00:00.0" create_by="ooi" update_date="2013-09-27 00:00:00.0" update_by="ooi" />
+	<saas_mst saas_mst_id="10" saas_name="SAAS&#21517;10" create_date="2013-09-03 00:00:00.0"
+		create_by="sakuma" update_date="2013-09-03 00:00:00.0" update_by="sakuma" />
+	<user_role user_id="ishikawa" role_id="40" create_date="2013-10-15 00:00:00.0" create_by="ooi"
+		update_date="2013-10-15 00:00:00.0" update_by="ooi" />
+	<user_role user_id="sakuma" role_id="40" create_date="2013-09-03 00:00:00.0" create_by="sakuma"
+		update_date="2013-09-03 00:00:00.0" update_by="sakuma" />
+	<user_role user_id="sakuma2" role_id="40" create_date="2013-11-11 17:55:39.173"
+		create_by="ishikawa" update_date="2013-11-11 17:55:39.173" update_by="ishikawa" />
+	<user_role user_id="sakuma9" role_id="40" create_date="2013-11-11 17:55:39.173"
+		create_by="ishikawa" update_date="2013-11-11 17:55:39.173" update_by="ishikawa" />
+</dataset>

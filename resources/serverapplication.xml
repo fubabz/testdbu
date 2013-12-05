@@ -1,0 +1,370 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE dataset SYSTEM "dtdlocation.xml">
+<dataset>
+<!-- 付加情報あり -->
+	<inter_basic family_name="鈴木" update_date="2013-09-01" create_from="" given_name="一郎"
+		employee_number="M1000" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="1000" contract_id="S000020" create_date="2013-09-01"
+		delete_flg="0" create_by="sakuma" />
+	<inter_basic family_name="斉藤" update_date="2013-09-01" create_from="" given_name="次郎"
+		employee_number="M1001" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="1001" contract_id="S000020" create_date="2013-09-01"
+		delete_flg="0" create_by="sakuma" />
+	<inter_basic family_name="加藤" update_date="2013-09-01" create_from="" given_name="次郎"
+		employee_number="M1002" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="1002" contract_id="S000020" create_date="2013-09-01"
+		delete_flg="0" create_by="sakuma" />
+	<inter_basic family_name="吉田" update_date="2013-09-01" create_from="" given_name="三郎"
+		employee_number="M1003" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="1003" contract_id="S000020" create_date="2013-09-01"
+		delete_flg="1" create_by="sakuma" />
+	<inter_basic family_name="吉田" update_date="2013-09-01" create_from="" given_name="4郎"
+		employee_number="M1004" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="1" inter_basic_id="1004" contract_id="S000020" create_date="2013-09-01"
+		delete_flg="0" create_by="sakuma" />
+	<inter_basic family_name="吉田" update_date="2013-09-01" create_from="" given_name="5郎"
+		employee_number="M1005" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="1" inter_basic_id="1005" contract_id="S000020" create_date="2013-09-01"
+		delete_flg="1" create_by="sakuma" />
+<!-- 全カラム -->
+	<inter_basic family_name="石川" update_date="2013-10-03 10:20:30" create_from="" given_name="明"
+		employee_number="m3005" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="1006" contract_id="S000020" create_date="2013-10-03 1:2:3"
+		delete_flg="0" create_by="sakuma" building="○☓ビルディング" company_extension="ext10"
+		company_facsimile="fax20" company_mobile="mobile30" company_name="企業名" company_phone="03-123-4567"
+		country_code="JP" country_name="日本" email1="ishikawa@sample.com" locality="千代田区"
+		middle_name="ミドル名" org_code="org100" org_code1="OC1" org_code2="OC2" org_code3="OC3"
+		org_code4="OC4" org_code5="OC5" org_code6="OC6" org_code7="OC7" org_code8="OC8"
+		org_code9="OC9" org_code10="OC10" org_name1="組織名1" org_name2="組織名2" org_name3="組織名3"
+		org_name4="組織名4" org_name5="組織名5" org_name6="組織名6" org_name7="組織名7" org_name8="組織名8"
+		org_name9="組織名9" org_name10="組織名10" phonetic_family_name="イシカワ" phonetic_given_name="アキラ"
+		postal_code="100-0012" region="東京都" street_address="神田神保町1-2-3" title_code="55" title_name="課長代理" />
+
+	<!-- マッチング用 -->
+	<inter_basic family_name="佐藤" update_date="2013-10-02" create_from="" given_name="一郎"
+		employee_number="M2001" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2001" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="イチロウ" org_code="111"
+		org_code1="100" org_code2="110" org_code3="111" org_name1="西日本事業本部" org_name2="第一営業部" org_name3="営業一課"
+		title_code="222" title_name="部長" />
+	<inter_basic family_name="佐藤" update_date="2013-10-02" create_from="" given_name="2郎"
+		employee_number="M2002" update_by="sakuma" additional_duty_code="01" display_type="00"
+		invalid_flg="0" inter_basic_id="2002" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="ジロウ" org_code="111"
+		org_code1="100" org_code2="110" org_code3="111" org_name1="西日本事業本部" org_name2="第一営業部" org_name3="営業一課"
+		title_code="111" title_name="係長" />
+	<inter_basic family_name="佐藤" update_date="2013-10-02" create_from="" given_name="3郎"
+		employee_number="M2003" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2003" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="サブロウ" org_code="112"
+		org_code1="100" org_code2="110" org_code3="112" org_name1="西日本事業本部" org_name2="第一営業部" org_name3="営業二課"
+		title_code="222" title_name="部長" />
+	<inter_basic family_name="佐藤" update_date="2013-10-02" create_from="" given_name="4郎"
+		employee_number="M2004" update_by="sakuma" additional_duty_code="01" display_type="00"
+		invalid_flg="0" inter_basic_id="2004" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="シロウ" org_code="112"
+		org_code1="100" org_code2="110" org_code3="112" org_name1="西日本事業本部" org_name2="第一営業部" org_name3="営業二課"
+		title_code="111" title_name="係長" />
+	<inter_basic family_name="佐藤" update_date="2013-10-02" create_from="" given_name="5郎"
+		employee_number="M2005" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2005" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="ゴロウ" org_code="113"
+		org_code1="100" org_code2="110" org_code3="113" org_name1="西日本事業本部" org_name2="第一営業部" org_name3="営業三課"
+		title_code="222" title_name="部長" />
+	<inter_basic family_name="佐藤" update_date="2013-10-02" create_from="" given_name="6郎"
+		employee_number="M2006" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2006" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="ロクロウ" org_code="113"
+		org_code1="100" org_code2="110" org_code3="113" org_name1="西日本事業本部" org_name2="第一営業部" org_name3="営業三課"
+		title_code="111" title_name="係長" />
+	<inter_basic family_name="佐藤" update_date="2013-10-02" create_from="" given_name="7郎"
+		employee_number="M2007" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2007" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="シチロウ" org_code="114"
+		org_code1="100" org_code2="110" org_code3="114" org_name1="西日本事業本部" org_name2="第一営業部" org_name3="営業四課"
+		title_code="222" title_name="部長" />
+	<inter_basic family_name="佐藤" update_date="2013-10-02" create_from="" given_name="8郎"
+		employee_number="M2008" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2008" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="ハチロウ" org_code="114"
+		org_code1="100" org_code2="110" org_code3="114" org_name1="西日本事業本部" org_name2="第一営業部" org_name3="営業四課"
+		title_code="111" title_name="係長" />
+	<inter_basic family_name="佐藤" update_date="2013-10-02" create_from="" given_name="9郎"
+		employee_number="M2009" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2009" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="クロウ" org_code="115"
+		org_code1="100" org_code2="110" org_code3="115" org_name1="西日本事業本部" org_name2="第一営業部" org_name3="営業五課"
+		title_code="222" title_name="部長" />
+	<inter_basic family_name="佐藤" update_date="2013-10-02" create_from="" given_name="10郎"
+		employee_number="M2010" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2010" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="ジュウロウ" org_code="115"
+		org_code1="100" org_code2="120" org_code3="115" org_name1="西日本事業本部" org_name2="第一開発部" org_name3="開発五課"
+		title_code="111" title_name="係長" />
+	<inter_basic family_name="佐藤" update_date="2013-5-02" create_from="" given_name="11郎"
+		employee_number="M2011" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2011" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="ジュウイチロウ"
+		org_code="123" org_code1="100" org_code2="120" org_code3="123" org_name1="西日本事業本部" org_name2="第一開発部"
+		org_name3="開発三課" title_code="222" title_name="部長" />
+	<inter_basic family_name="佐藤" update_date="2013-5-02" create_from="" given_name="12郎"
+		employee_number="M2012" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2012" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="ジュウニロウ"
+		org_code="123" org_code1="100" org_code2="120" org_code3="123" org_name1="西日本事業本部" org_name2="第一開発部"
+		org_name3="開発三課" title_code="111" title_name="係長" />
+	<inter_basic family_name="佐藤" update_date="2013-5-02" create_from="" given_name="13郎"
+		employee_number="M2013" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2013" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="ジュウサンロウ"
+		org_code="123" org_code1="100" org_code2="120" org_code3="123" org_name1="西日本事業本部" org_name2="第一開発部"
+		org_name3="開発三課" title_code="222" title_name="部長" />
+	<inter_basic family_name="佐藤" update_date="2013-5-02" create_from="" given_name="14郎"
+		employee_number="M2014" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2014" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="ジュウシロウ"
+		org_code="123" org_code1="100" org_code2="120" org_code3="123" org_name1="西日本事業本部" org_name2="第一開発部"
+		org_name3="開発三課" title_code="111" title_name="係長" />
+
+	<inter_basic family_name="佐藤" update_date="2013-5-02" create_from="" given_name="15郎"
+		employee_number="M2015" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2015" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="イチロウ" org_code="211"
+		org_code1="200" org_code2="210" org_code3="211" org_name1="東日本事業本部" org_name2="第一営業部" org_name3="営業1課"
+		title_code="222" title_name="部長" />
+	<inter_basic family_name="佐藤" update_date="2013-5-02" create_from="" given_name="16郎"
+		employee_number="M2016" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2016" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="イチロウ" org_code="211"
+		org_code1="200" org_code2="210" org_code3="211" org_name1="東日本事業本部" org_name2="第一営業部" org_name3="営業1課"
+		title_code="111" title_name="係長" />
+	<inter_basic family_name="佐藤" update_date="2013-5-02" create_from="" given_name="17郎"
+		employee_number="M2017" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2017" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="イチロウ" org_code="212"
+		org_code1="200" org_code2="210" org_code3="212" org_name1="東日本事業本部" org_name2="第一営業部" org_name3="営業2課"
+		title_code="222" title_name="部長" />
+	<inter_basic family_name="佐藤" update_date="2013-5-02" create_from="" given_name="18郎"
+		employee_number="M2018" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2018" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="イチロウ" org_code="212"
+		org_code1="200" org_code2="210" org_code3="212" org_name1="東日本事業本部" org_name2="第一営業部" org_name3="営業2課"
+		title_code="111" title_name="係長" />
+	<inter_basic family_name="佐藤" update_date="2013-5-02" create_from="" given_name="19郎"
+		employee_number="M2019" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2019" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="イチロウ" org_code="213"
+		org_code1="200" org_code2="210" org_code3="213" org_name1="東日本事業本部" org_name2="第一営業部" org_name3="営業3課"
+		title_code="222" title_name="部長" />
+	<inter_basic family_name="佐藤" update_date="2013-5-02" create_from="" given_name="20郎"
+		employee_number="M2020" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2020" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="イチロウ" org_code="213"
+		org_code1="200" org_code2="210" org_code3="213" org_name1="東日本事業本部" org_name2="第一営業部" org_name3="営業3課"
+		title_code="111" title_name="係長" />
+	<inter_basic family_name="佐藤" update_date="2013-5-02" create_from="" given_name="21郎"
+		employee_number="M2021" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2021" contract_id="S000120" create_date="2013-10-02"
+		delete_flg="0" create_by="sakuma" phonetic_family_name="サトウ" phonetic_given_name="イチロウ" org_code="214"
+		org_code1="200" org_code2="210" org_code3="214" org_name1="東日本事業本部" org_name2="第一営業部" org_name3="営業4課"
+		title_code="222" title_name="部長" />
+
+<!-- ソート、部分検索用 -->
+	<inter_basic family_name="Brown" update_date="2013-10-03 11:00:00" create_from="" given_name="John"
+		employee_number="M2101" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2101" contract_id="S000121" create_date="2013-10-02 11:00:00"
+		delete_flg="0" create_by="sakuma"  org_code="300"
+		org_code1="100" org_name1="development"
+		title_code="333" title_name="次長" />
+	<inter_basic family_name="Brown" update_date="2013-10-03 10:00:00" create_from="" given_name="John"
+		employee_number="M2101" update_by="sakuma" additional_duty_code="01" display_type="00"
+		invalid_flg="0" inter_basic_id="2102" contract_id="S000121" create_date="2013-10-02 10:00:00"
+		delete_flg="0" create_by="sakuma"  org_code="300"
+		org_code1="100" org_name1="development"
+		title_code="333" title_name="次長" />
+	<inter_basic family_name="Brown" update_date="2013-10-03 10:00:00" create_from="" given_name="John"
+		employee_number="M2102" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2103" contract_id="S000121" create_date="2013-10-02 10:00:00"
+		delete_flg="0" create_by="sakuma"  org_code="300"
+		org_code1="100" org_name1="development"
+		title_code="333" title_name="次長" />
+	<inter_basic family_name="Brown" update_date="2013-10-03 10:00:00" create_from="" given_name="John"
+		employee_number="M2102" update_by="sakuma" additional_duty_code="01" display_type="00"
+		invalid_flg="0" inter_basic_id="2104" contract_id="S000121" create_date="2013-10-02 10:00:00"
+		delete_flg="0" create_by="sakuma"  org_code="300"
+		org_code1="100" org_name1="development"
+		title_code="333" title_name="次長" />
+	<inter_basic family_name="Brown" update_date="2013-10-03 12:00:00" create_from="" given_name="John"
+		employee_number="M2103" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2105" contract_id="S000121" create_date="2013-10-02 12:00:00"
+		delete_flg="0" create_by="sakuma"  org_code="300"
+		org_code1="100" org_name1="development"
+		title_code="333" title_name="次長" />
+	<inter_basic family_name="Brown" update_date="2013-10-03 13:00:00" create_from="" given_name="John"
+		employee_number="M2103" update_by="sakuma" additional_duty_code="00" display_type="00"
+		invalid_flg="0" inter_basic_id="2106" contract_id="S000121" create_date="2013-10-02 13:00:00"
+		delete_flg="0" create_by="sakuma"  org_code="300"
+		org_code1="100" org_name1="development"
+		title_code="333" title_name="次長" />
+
+	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1000" update_date="2013-09-01"
+		display_type="00" inter_ext_item_id="EMAILEXT" create_date="2013-09-01" value_char="suzuki@sample.com &lt;&gt;&quot;'," />
+	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1000" update_date="2013-09-01"
+		display_type="00" inter_ext_item_id="HOMEPAGE" create_date="2013-09-01" value_char="http://sample.com/suzuki" />
+	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1001" update_date="2013-09-01"
+		display_type="00" inter_ext_item_id="EMAILEXT" create_date="2013-09-01" value_char="saito@sample.com &lt;&gt;&quot;'," />
+	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1001" update_date="2013-09-01"
+		display_type="00" inter_ext_item_id="HOMEPAGE" create_date="2013-09-01" value_char="http://sample.com/saito" />
+	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1002" update_date="2013-09-01"
+		display_type="00" inter_ext_item_id="HOMEPAGE" create_date="2013-09-01" value_char="http://sample.com/kato" />
+	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1003" update_date="2013-09-01"
+		display_type="00" inter_ext_item_id="" create_date="2013-09-01" value_char="http://sample.com/yoshida" />
+	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1006" update_date="2013-09-01"
+		display_type="00" inter_ext_item_id="EMAILEXT" create_date="2013-09-01" value_char="ishikawa@sample.com" />
+
+	<inter_ext_item update_by="sakuma" create_by="sakuma" update_date="2013-09-01"
+		inter_ext_item_id="EMAILEXT" sort_order="1" create_date="2013-09-01" inter_ext_item_len="100" />
+	<inter_ext_item update_by="sakuma" create_by="sakuma" update_date="2013-09-01"
+		inter_ext_item_id="HOMEPAGE" sort_order="2" create_date="2013-09-01" inter_ext_item_len="100" />
+	<inter_ext_item_name inter_ext_item_name="電子メールアドレス" update_by="sakuma"
+		create_by="sakuma" update_date="2013-09-01" inter_ext_item_id="EMAILEXT" create_date="2013-09-01"
+		lang_code="00" />
+	<inter_ext_item_name inter_ext_item_name="ホームページURL" update_by="sakuma"
+		create_by="sakuma" update_date="2013-09-01" inter_ext_item_id="HOMEPAGE" create_date="2013-09-01"
+		lang_code="00" />
+	<mapping create_date="2013-10-1" respond_name="C_employee_number" mapping_id="2"
+		db_column_name="employee_number" mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1"
+		create_by="sakuma" update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_additional_duty_code" mapping_id="3"
+		db_column_name="additional_duty_code" mapping_type="10" update_by="sakuma" info_type="00"
+		contract_id="SO1" create_by="sakuma" update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_family_name" mapping_id="4"
+		db_column_name="family_name" mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1"
+		create_by="sakuma" update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_given_name" mapping_id="5" db_column_name="given_name"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_LAST_KANA" mapping_id="6" db_column_name="LAST_KANA"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_FIRST_KANA" mapping_id="7" db_column_name="FIRST_KANA"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_MIDDLE_NAME" mapping_id="8"
+		db_column_name="MIDDLE_NAME" mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1"
+		create_by="sakuma" update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_CODE" mapping_id="9" db_column_name="SEC_CODE"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_CODE1" mapping_id="10" db_column_name="SEC_CODE1"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_CODE2" mapping_id="11" db_column_name="SEC_CODE2"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_CODE3" mapping_id="12" db_column_name="SEC_CODE3"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_CODE4" mapping_id="13" db_column_name="SEC_CODE4"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_CODE5" mapping_id="14" db_column_name="SEC_CODE5"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_CODE6" mapping_id="15" db_column_name="SEC_CODE6"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_CODE7" mapping_id="16" db_column_name="SEC_CODE7"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_CODE8" mapping_id="17" db_column_name="SEC_CODE8"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_CODE9" mapping_id="18" db_column_name="SEC_CODE9"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_CODE10" mapping_id="19"
+		db_column_name="SEC_CODE10" mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1"
+		create_by="sakuma" update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_NAME1" mapping_id="20" db_column_name="SEC_NAME1"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_NAME2" mapping_id="21" db_column_name="SEC_NAME2"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_NAME3" mapping_id="22" db_column_name="SEC_NAME3"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_NAME4" mapping_id="23" db_column_name="SEC_NAME4"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_NAME5" mapping_id="24" db_column_name="SEC_NAME5"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_NAME6" mapping_id="25" db_column_name="SEC_NAME6"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_NAME7" mapping_id="26" db_column_name="SEC_NAME7"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_NAME8" mapping_id="27" db_column_name="SEC_NAME8"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_NAME9" mapping_id="28" db_column_name="SEC_NAME9"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_SEC_NAME10" mapping_id="29"
+		db_column_name="SEC_NAME10" mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1"
+		create_by="sakuma" update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_POST_CODE" mapping_id="30" db_column_name="POST_CODE"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_POST_NAME" mapping_id="31" db_column_name="POST_NAME"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_CO_TEL" mapping_id="32" db_column_name="CO_TEL"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_FAX_TEL" mapping_id="35" db_column_name="FAX_TEL"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_MAIL_CSVDRESS" mapping_id="36"
+		db_column_name="CO_MAIL_ADDRESS" mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1"
+		create_by="sakuma" update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_COUNTRY_CODE" mapping_id="37"
+		db_column_name="COUNTRY_CODE" mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1"
+		create_by="sakuma" update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_COUNTRY_NAME" mapping_id="38"
+		db_column_name="ADDRESS1" mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1"
+		create_by="sakuma" update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_ZIP_CODE" mapping_id="39" db_column_name="ZIP_CODE"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_PREFECTURES" mapping_id="40"
+		db_column_name="ADDRESS2" mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1"
+		create_by="sakuma" update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_MUNICIPALITY" mapping_id="41"
+		db_column_name="ADDRESS3" mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1"
+		create_by="sakuma" update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_HOME_ADDRESS" mapping_id="42"
+		db_column_name="ADDRESS4" mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1"
+		create_by="sakuma" update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_BUILDING" mapping_id="43" db_column_name="BUILDING_CODE"
+		mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_EMAIL" mapping_id="44" db_column_name="1"
+		mapping_type="10" update_by="sakuma" info_type="10" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<mapping create_date="2013-10-1" respond_name="C_HOMEPAGE" mapping_id="45" db_column_name="2"
+		mapping_type="10" update_by="sakuma" info_type="10" contract_id="SO1" create_by="sakuma"
+		update_date="2013-10-1" />
+	<!-- <mapping create_date="2013-10-1" respond_name="C_CO_NAME" mapping_id="1" db_column_name="CO_NAME" mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma" update_date="2013-10-1" /> -->
+	<!-- <mapping create_date="2013-10-1" respond_name="C_CO_EXT_TEL" mapping_id="33" db_column_name="CO_EXT_TEL" mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma" update_date="2013-10-1" /> -->
+	<!-- <mapping create_date="2013-10-1" respond_name="C_CO_MOB_TEL" mapping_id="34" db_column_name="CO_MOB_TEL" mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1" create_by="sakuma" update_date="2013-10-1" /> -->
+	<saas update_by="sakuma" create_by="sakuma" saas_mst_id="10" update_date="2013-10-1"
+		create_date="2013-10-1" saas_id="1" contract_id="S000020" />
+	<saas update_by="sakuma" create_by="sakuma" saas_mst_id="10" update_date="2013-10-1"
+		create_date="2013-10-1" saas_id="2" contract_id="S000120" />
+	<saas update_by="sakuma" create_by="sakuma" saas_mst_id="10" update_date="2013-10-1"
+		create_date="2013-10-1" saas_id="3" contract_id="S000121" />
+</dataset>

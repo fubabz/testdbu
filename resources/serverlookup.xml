@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE dataset SYSTEM "dtdlookup.xml">
+<dataset>
+	<auth user_id="sakuma" user_password="sakuma" pass_expire_date="9999-12-31 23:00:00.0" contract_id="S000020" saas_mst_id="1" user_family_name="佐久間" user_given_name="良" ng_count="0" lock_state="false" create_date="2013-08-28 00:00:00.0" create_by="sakuma"
+		update_date="2013-08-28 00:00:00.0" update_by="sakuma" user_email_address="sakuma@local" user_phone="1234567"/>
+	<contract_mst update_date="2013-10-1" create_by="sakuma" create_date="2013-10-1" location_id="2" contract_id="S000020" update_by="sakuma" />
+	<contract_mst update_date="2013-10-1" create_by="sakuma" create_date="2013-10-1" location_id="2" contract_id="S000120" update_by="sakuma" />
+	<role_auth role_id="00" auth_id="000" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="00" auth_id="101" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="00" auth_id="103" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="00" auth_id="105" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="00" auth_id="201" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="00" auth_id="203" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="00" auth_id="301" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="00" auth_id="303" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="00" auth_id="305" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="00" auth_id="402" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="00" auth_id="501" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="00" auth_id="701" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="00" auth_id="703" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="000" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="100" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="102" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="104" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="200" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="202" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="300" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="302" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="304" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="400" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="401" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="500" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="502" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="600" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="601" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="700" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="702" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<role_auth role_id="40" auth_id="704" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<saas_mst update_by="sakuma" create_by="sakuma" saas_mst_id="10" saas_name="SAAS名10" update_date="2013-9-3" create_date="2013-9-3" />
+	<user_role role_id="40" user_id="sakuma" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<user_role role_id="40" user_id="ooi" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<user_role role_id="40" user_id="sample" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+	<user_role role_id="40" user_id="taka" update_by="sakuma" create_by="sakuma" update_date="2013-9-3" create_date="2013-9-3" />
+</dataset>
