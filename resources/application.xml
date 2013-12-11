@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE dataset SYSTEM "application.dtd">
 <dataset>
-	<activedirectory />
+<!-- <activedirectory /> -->
 	<contract update_by="sakuma" update_date="2013-12-05 00:00:00" co_name="なんとか法律事務所"
 		create_date="2013-12-05 00:00:00" ad_sync_flg="false" create_by="sakuma" contract_id="T000021" />
 <!-- 付加情報あり -->
@@ -228,8 +228,8 @@
 	<inter_ext_item_name inter_ext_item_name="ホームページURL" update_by="sakuma"
 		create_by="sakuma" update_date="2013-09-01 00:00:00" inter_ext_item_id="HOMEPAGE" create_date="2013-09-01 00:00:00"
 		lang_code="00" />
-	<log operation_date="2013-09-01 00:00:00" log_id="00" />
-	<mapping />
+	<!-- <log operation_date="2013-09-01 00:00:00" log_id="00" />
+	<mapping /> -->
 	<saas update_by="sakuma" create_by="sakuma" saas_mst_id="1" update_date="2013-10-01 00:00:00"
 		create_date="2013-10-01 00:00:00" saas_id="saas1" contract_id="T000021" />
 	<saas update_by="sakuma" create_by="sakuma" saas_mst_id="10" update_date="2013-10-01 00:00:00"

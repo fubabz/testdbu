@@ -23,11 +23,16 @@
 		create_by="sakuma" update_date="2013-10-01 00:00:00.0" update_by="sakuma" />
 	<contract_mst contract_id="T000900" location_id="9" create_date="2013-10-01 00:00:00.0"
 		create_by="sakuma" update_date="2013-10-01 00:00:00.0" update_by="sakuma" />
+	<contract_mst contract_id="T001125" location_id="3" create_date="2013-10-01 00:00:00.0"
+		create_by="sakuma" update_date="2013-10-01 00:00:00.0" update_by="sakuma" />
 	<location location_id="1" server_name="server" db_type="00" db_ip_address="192.168.204.182"
 		db_port="5432" db_name="application" db_user_id="postgres" db_password="use-ebisu" create_date="2013-09-10 00:00:00.0"
 		create_by="sakuma" update_date="2013-09-10 00:00:00.0" update_by="sakuma" />
 	<location location_id="2" server_name="local" db_type="00" db_ip_address="localhost"
 		db_port="5432" db_name="application" db_user_id="postgres" db_password="root" create_date="2013-09-10 00:00:00.0"
+		create_by="sakuma" update_date="2013-09-10 00:00:00.0" update_by="sakuma" />
+	<location location_id="3" server_name="local" db_type="00" db_ip_address="192.168.204.115"
+		db_port="5432" db_name="application" db_user_id="postgres" db_password="use-ebisu" create_date="2013-09-10 00:00:00.0"
 		create_by="sakuma" update_date="2013-09-10 00:00:00.0" update_by="sakuma" />
 	<!-- <location location_id="9" server_name="invalid password" db_type="00" db_ip_address="localhost"
 		db_port="5432" db_name="application" db_user_id="postgres" db_password="xxxx" create_date="2013-09-10 00:00:00.0"
