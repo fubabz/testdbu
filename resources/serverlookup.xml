@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE dataset SYSTEM "lookup.dtd">
 <dataset>
-	<auth user_id="sakuma" user_password="sakuma" pass_expire_date="9999-12-31 23:00:00.0"
+	<auth user_id="sakuma" user_password="sakuma" pass_expire_date="9999-12-31 23:00:00.0" contract_id="T000200"
 		saas_mst_id="1" user_family_name="佐久間" user_given_name="良" ng_count="0" lock_state="false"
 		create_date="2013-08-28 00:00:00.0" create_by="sakuma" update_date="2013-08-28 00:00:00.0"
 		update_by="sakuma" user_email_address="sakuma@local" user_phone="1234567" />

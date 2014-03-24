@@ -43,67 +43,76 @@
 			<query name="t1set1" sql="select * from t1 where id &gt; @id@" />
 		</queryset>
 	</target>
-	<target name="refresh-xls" depends="dbunit-init" description="excelからrefresh">
-		<dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" schema="${db.schema}" classpathref="compile.classpath">
-			<dbconfig>
-				<property name="datatypeFactory" value="${db.datatype}" />
-			</dbconfig>
-			<operation type="REFRESH" format="xls" src="${in.dir}/${file.xls}" nullToken="[null]" />
-		</dbunit>
-	</target>
+	<macrodef name="dboperation">
+		<element name="dbunit-operations" />
+		<sequential>
+			<dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" schema="${db.schema}" classpathref="compile.classpath">
+				<dbconfig>
+					<property name="datatypeFactory" value="${db.datatype}" />
+				</dbconfig>
+				<dbunit-operations />
+			</dbunit>
+		</sequential>
+	</macrodef>
 	<target name="refresh" depends="dbunit-init" description="flatxmlからrefresh">
-		<dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" schema="${db.schema}" classpathref="compile.classpath">
-			<dbconfig>
-				<property name="datatypeFactory" value="${db.datatype}" />
-			</dbconfig>
-			<operation type="REFRESH" format="flat" src="${in.dir}/${file.flat}" nullToken="[null]" />
-		</dbunit>
+		<dboperation>
+			<dbunit-operations>
+				<operation type="REFRESH" format="flat" src="${in.dir}/${file.flat}" nullToken="[null]" />
+			</dbunit-operations>
+		</dboperation>
+	</target>
+	<target name="refresh-xls" depends="dbunit-init" description="excelからrefresh">
+		<dboperation>
+			<dbunit-operations>
+				<operation type="REFRESH" format="xls" src="${in.dir}/${file.xls}" nullToken="[null]" />
+			</dbunit-operations>
+		</dboperation>
 	</target>
 	<target name="clean_insert" depends="dbunit-init" description="flatxmlからclean_insert">
-		<dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" schema="${db.schema}" classpathref="compile.classpath">
-			<dbconfig>
-				<property name="datatypeFactory" value="${db.datatype}" />
-			</dbconfig>
-			<operation type="CLEAN_INSERT" format="flat" src="${in.dir}/${file.flat}" nullToken="[null]" />
-		</dbunit>
+		<dboperation>
+			<dbunit-operations>
+				<operation type="CLEAN_INSERT" format="flat" src="${in.dir}/${file.flat}" nullToken="[null]" />
+			</dbunit-operations>
+		</dboperation>
 	</target>
 	<target name="clean_insert-xls" depends="dbunit-init" description="xlsからclean_insert">
-		<dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" schema="${db.schema}" classpathref="compile.classpath">
-			<dbconfig>
-				<property name="datatypeFactory" value="${db.datatype}" />
-			</dbconfig>
-			<operation type="CLEAN_INSERT" format="xls" src="${in.dir}/${file.xls}" nullToken="[null]" />
-		</dbunit>
+		<dboperation>
+			<dbunit-operations>
+				<operation type="CLEAN_INSERT" format="xls" src="${in.dir}/${file.xls}" nullToken="[null]" />
+			</dbunit-operations>
+		</dboperation>
 	</target>
 	<target name="export" depends="dbunit-init" description="xmlでエクスポート">
-		<dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" schema="${db.schema}" classpathref="compile.classpath">
-			<dbconfig>
-				<property name="datatypeFactory" value="${db.datatype}" />
-			</dbconfig>
-			<export dest="${out.dir}/${file.flat.out}" doctype="${out.dir}/${file.dtd}">
-				<!-- <query name="authname" sql="SELECT * FROM auth" /> <queryset refid="set1"> 
-					<filterset> <filter token="id" value="1000" /> </filterset> </queryset> <table 
-					name="location" /> -->
-			</export>
-		</dbunit>
+		<dboperation>
+			<dbunit-operations>
+				<export dest="${out.dir}/${file.flat.out}" doctype="${out.dir}/${file.dtd}">
+					<!--                    <query name="authname" sql="SELECT * FROM auth" />
+                    <queryset refid="set1">
+                        <filterset>
+                            <filter token="id" value="1000" />
+                        </filterset>
+                    </queryset>
+                    <table name="location" />
+                    -->
+				</export>
+			</dbunit-operations>
+		</dboperation>
 	</target>
 	<target name="export-application" depends="dbunit-init" description="xmlでエクスポート">
-		<dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" schema="${db.schema}" classpathref="compile.classpath">
-			<dbconfig>
-				<property name="datatypeFactory" value="${db.datatype}" />
-			</dbconfig>
-			<export dest="${out.dir}/${file.flat.out}" doctype="${out.dir}/${file.dtd}">
-				<table name="inter_ext_item" />
-				<table name="inter_ext_item_name" />
-			</export>
-		</dbunit>
+		<dboperation>
+			<dbunit-operations>
+				<export dest="${out.dir}/${file.flat.out}" doctype="${out.dir}/${file.dtd}">
+					<table name="inter_ext_item" />
+					<table name="inter_ext_item_name" />
+				</export>
+			</dbunit-operations>
+		</dboperation>
 	</target>
-	<target name="exportdtd" depends="dbunit-init" description="DTDをエクスポート">
-		<dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" schema="${db.schema}" classpathref="compile.classpath">
-			<dbconfig>
-				<property name="datatypeFactory" value="${db.datatype}" />
-			</dbconfig>
-			<export format="dtd" dest="${out.dir}/${file.dtd}" />
-		</dbunit>
+	<target name="export-dtd" depends="dbunit-init" description="DTDをエクスポート">
+		<dboperation>
+			<dbunit-operations>
+				<export format="dtd" dest="${out.dir}/${file.dtd}" />
+			</dbunit-operations>
+		</dboperation>
 	</target>
 </project>

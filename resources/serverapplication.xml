@@ -208,30 +208,36 @@
 		title_code="333" title_name="次長" />
 
 	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1000" update_date="2013-09-01"
-		display_type="00" inter_ext_item_id="EMAILEXT" create_date="2013-09-01" value_char="suzuki@sample.com &lt;&gt;&quot;'," />
+		display_type="00" inter_ext_item_id="EMAILEXT" create_date="2013-09-01" value_char="suzuki@sample.com &lt;&gt;&quot;'" />
 	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1000" update_date="2013-09-01"
-		display_type="00" inter_ext_item_id="HOMEPAGE" create_date="2013-09-01" value_char="http://sample.com/suzuki" />
+		display_type="00" inter_ext_item_id="HOME_PAGE" create_date="2013-09-01" value_char="http://sample.com/suzuki" />
+	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1000" update_date="2013-09-01"
+		display_type="00" inter_ext_item_id="PRIVATE_MOBILE" create_date="2013-09-01" value_char="090-1234-5678" />
+	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1000" update_date="2013-09-01"
+		display_type="00" inter_ext_item_id="CREDIT_CARD_NUMBER" create_date="2013-09-01" value_char="1234-5678-9012-3456" />
 	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1001" update_date="2013-09-01"
 		display_type="00" inter_ext_item_id="EMAILEXT" create_date="2013-09-01" value_char="saito@sample.com &lt;&gt;&quot;'," />
 	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1001" update_date="2013-09-01"
-		display_type="00" inter_ext_item_id="HOMEPAGE" create_date="2013-09-01" value_char="http://sample.com/saito" />
+		display_type="00" inter_ext_item_id="HOME_PAGE" create_date="2013-09-01" value_char="http://sample.com/saito" />
 	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1002" update_date="2013-09-01"
-		display_type="00" inter_ext_item_id="HOMEPAGE" create_date="2013-09-01" value_char="http://sample.com/kato" />
+		display_type="00" inter_ext_item_id="HOME_PAGE" create_date="2013-09-01" value_char="http://sample.com/kato" />
 	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1003" update_date="2013-09-01"
 		display_type="00" inter_ext_item_id="" create_date="2013-09-01" value_char="http://sample.com/yoshida" />
 	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1006" update_date="2013-09-01"
 		display_type="00" inter_ext_item_id="EMAILEXT" create_date="2013-09-01" value_char="ishikawa@sample.com" />
 
+<!-- 
 	<inter_ext_item update_by="sakuma" create_by="sakuma" update_date="2013-09-01"
 		inter_ext_item_id="EMAILEXT" sort_order="1" create_date="2013-09-01" inter_ext_item_len="100" />
 	<inter_ext_item update_by="sakuma" create_by="sakuma" update_date="2013-09-01"
-		inter_ext_item_id="HOMEPAGE" sort_order="2" create_date="2013-09-01" inter_ext_item_len="100" />
+		inter_ext_item_id="HOME_PAGE" sort_order="2" create_date="2013-09-01" inter_ext_item_len="100" />
 	<inter_ext_item_name inter_ext_item_name="電子メールアドレス" update_by="sakuma"
 		create_by="sakuma" update_date="2013-09-01" inter_ext_item_id="EMAILEXT" create_date="2013-09-01"
 		lang_code="00" />
 	<inter_ext_item_name inter_ext_item_name="ホームページURL" update_by="sakuma"
-		create_by="sakuma" update_date="2013-09-01" inter_ext_item_id="HOMEPAGE" create_date="2013-09-01"
+		create_by="sakuma" update_date="2013-09-01" inter_ext_item_id="HOME_PAGE" create_date="2013-09-01"
 		lang_code="00" />
+		 -->
 		<!-- 
 	<mapping create_date="2013-10-01" respond_name="C_employee_number" mapping_id="2"
 		db_column_name="employee_number" mapping_type="10" update_by="sakuma" info_type="00" contract_id="SO1"
