@@ -49,7 +49,7 @@ public class Test2 {
     
         logger.info("testLoadXls開始");
     
-        IDataSet ds = DataSet.loadXls("/data1.xls");
+        IDataSet ds = DataSet.loadXls("/data1.xls", this.getClass());
     
         XlsDataSetWriter writer = new XlsDataSetWriter();
         writer.write(ds, new FileOutputStream("target/out3.xls"));
