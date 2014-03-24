@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE dataset SYSTEM "application.dtd">
+<dataset>
+	<inter_basic family_name="佐藤" update_date="2013-09-01 00:00:00" create_from="" given_name="一郎"
+		employee_number="M3005" update_by="sakuma" additional_duty_code="01" display_type="00"
+		invalid_flg="0" inter_basic_id="263" contract_id="T000001" create_date="2013-09-01 00:00:00"
+		delete_flg="0" create_by="sakuma" org_code="org100" org_name1="組織名1" title_name="プログラマ"
+		title_code="404" org_code1="OC1" org_code2="org100" org_code3="CO3" org_name3="組織名3" phonetic_family_name="サ" phonetic_given_name="タロウ" />
+	<inter_basic family_name="佐藤" update_date="2013-09-01 00:00:00" create_from=""
+		given_name="一郎" employee_number="M3005" update_by="sakuma" additional_duty_code="02" display_type="00"
+		invalid_flg="0" inter_basic_id="3001" contract_id="T000001" create_date="2013-09-01 00:00:00"
+		delete_flg="0" create_by="sakuma" org_code="OC1" org_name1="orgname1" title_name="" title_code="40X" phonetic_family_name="サ" phonetic_given_name="タロウ" />
+	<inter_basic family_name="佐藤" update_date="2013-09-01 00:00:00" create_from=""
+		given_name="一郎" employee_number="M3005" update_by="sakuma" additional_duty_code="03" display_type="00"
+		invalid_flg="0" inter_basic_id="3002" contract_id="T000001" create_date="2013-09-01 00:00:00"
+		delete_flg="0" create_by="sakuma" org_code="OC1" org_name1="orgname1" title_name="" title_code="405" phonetic_family_name="サ" phonetic_given_name="タロウ" />
+	<inter_basic family_name="佐藤" update_date="2013-09-01 00:00:00" create_from=""
+		given_name="一郎" employee_number="M3005" update_by="sakuma" additional_duty_code="04" display_type="00"
+		invalid_flg="0" inter_basic_id="268" contract_id="T000001" create_date="2013-09-01 00:00:00"
+		delete_flg="0" create_by="sakuma" org_code="OC1" title_name="プログラマ" title_code="404"
+		org_code1="OS1" org_name1="製造1" org_code2="OS2" org_name2="製造2" org_code3="OS3" org_name3="製造3"
+		org_code4="OS4" org_name4="製造4" org_code5="OS5" org_name5="製造5" org_code6="OS6" org_name6="製造6"
+		org_code7="OS7" org_name7="製造7" org_code8="OS8" org_name8="製造8" org_code9="OS9" org_name9="製造9"
+		org_code10="OS10" org_name10="製造10" phonetic_family_name="サ" phonetic_given_name="タロウ" />
+	<inter_basic family_name="佐藤" update_date="2013-09-01 00:00:00" create_from=""
+		given_name="一郎" employee_number="M3005" update_by="sakuma" additional_duty_code="05" display_type="00"
+		invalid_flg="0" inter_basic_id="3004" contract_id="T000001" create_date="2013-09-01 00:00:00"
+		delete_flg="0" create_by="sakuma" org_code="OC1" org_name1="orgname1" title_name="" title_code="405" phonetic_family_name="サ" phonetic_given_name="タロウ"  />
+	<inter_basic update_date="2013-09-01 00:00:00" create_from="" 
+		employee_number="M3005" update_by="sakuma" additional_duty_code="07" display_type="00"
+		invalid_flg="0" inter_basic_id="304" contract_id="T000001" create_date="2013-09-01 00:00:00"
+		delete_flg="0" create_by="sakuma" org_code="OC1" org_name1="orgname1"
+		 phonetic_family_name="サトウ" phonetic_given_name="タロウ" />
+<inter_basic family_name="佐藤" update_date="2013-09-01 00:00:00" create_from="" given_name="一郎"
+		employee_number="M3005" update_by="sakuma" additional_duty_code="07" display_type="00"
+		invalid_flg="0" inter_basic_id="305" contract_id="T000001" create_date="2013-09-01 00:00:00"
+		delete_flg="0" create_by="sakuma" org_code="OC1" org_name1="orgname1" title_name=""
+		title_code="405" phonetic_given_name="ロウ" />
+	<inter_basic family_name="田中" update_date="2013-09-01 00:00:00" create_from=""
+		given_name="和夫" employee_number="M3006" update_by="sakuma" additional_duty_code="07" display_type="00"
+		invalid_flg="0" inter_basic_id="3007" contract_id="T000001" create_date="2013-09-01 00:00:00"
+		delete_flg="0" create_by="sakuma" org_code="OC1" org_name1="orgname1" title_name="" title_code="405" />
+	<inter_basic family_name="田中" update_date="2013-09-01 00:00:00" create_from=""
+		given_name="和夫" employee_number="M6000" update_by="sakuma" additional_duty_code="01" display_type="00"
+		invalid_flg="0" inter_basic_id="3008" contract_id="T000001" create_date="2013-09-01 00:00:00"
+		delete_flg="0" create_by="sakuma" org_code="OC1" org_name1="orgname1" title_name="" title_code="405" />
+<!-- 
+	<inter_ext update_by="sakuma" create_by="sakuma" inter_basic_id="1000" update_date="2013-09-01 00:00:00"
+		display_type="00" inter_ext_item_id="EMAILEXT" create_date="2013-09-01 00:00:00" value_char="suzuki@sample.com &lt;&gt;&quot;'," />
+		 -->
+</dataset>
