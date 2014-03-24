@@ -5,8 +5,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import org.dbunit.DatabaseUnitException;
+import org.dbunit.database.DatabaseConfig;
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.IDatabaseConnection;
+import org.dbunit.ext.postgresql.PostgresqlDataTypeFactory;
 
 public class DBConnection {
 
@@ -31,6 +33,8 @@ public class DBConnection {
         IDatabaseConnection dc = new DatabaseConnection(connection, config.getSchema());
 //        new OracleConnection(connection, config.getSchema());
 //        new H2Connection(connection, config.getSchema());
+        DatabaseConfig dbConfig = dc.getConfig();
+        dbConfig.setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new PostgresqlDataTypeFactory());
         return dc;
     }
 

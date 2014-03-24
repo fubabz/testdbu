@@ -1,92 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="database unit test" basedir=".">
-    <import file="${basedir}/build-ivy.xml" />
-    <property name="in.dir" value="${basedir}/resources" />
-    <property name="out.dir" value="${in.dir}" />
-    <path id="ant.classpath">
-        <!--<pathelement location="${basedir}/resources" /> -->
-        <!-- mvn dependency:copy-dependencies -->
-        <!-- maven-ant-task用 -->
-        <fileset dir="lib" includes="*.jar" />
-    </path>
-    <!-- プロパティファイルはANT起動時に指定する -->
-    <target name="mvn-init" unless="compile.classpath" depends="retrieve" xmlns:artifact="urn:maven-artifact-ant">
-        <typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="urn:maven-artifact-ant" classpathref="ant.classpath" />
-        <condition property="maven.repo.local" value="${maven.repo.local}" else="${user.home}/.m2/repository">
-            <isset property="maven.repo.local" />
-        </condition>
-        <echo>maven.repo.local=${maven.repo.local}</echo>
-        <artifact:localRepository id="local.repository" path="${maven.repo.local}" />
-        <artifact:pom file="pom.xml" id="maven.project" />
-        <artifact:dependencies pathId="compile.classpath" filesetId="compile.fileset" useScope="compile">
-            <pom refid="maven.project" />
-            <localRepository refid="local.repository" />
-        </artifact:dependencies>
-        <artifact:dependencies pathId="test.classpath" filesetId="test.fileset" useScope="test">
-            <pom refid="maven.project" />
-            <localRepository refid="local.repository" />
-        </artifact:dependencies>
-        <artifact:dependencies pathId="runtime.classpath" filesetId="runtime.fileset" useScope="runtime">
-            <pom refid="maven.project" />
-            <localRepository refid="local.repository" />
-        </artifact:dependencies>
-    </target>
-    <target name="copy-mvn-lib" depends="mvn-init" description="maven管理ライブラリをlibへコピーする">
-        <copy todir="lib" flatten="true">
-            <fileset refid="runtime.fileset" />
-        </copy>
-    </target>
-    <target name="dbunit-init" depends="mvn-init" description="DBUnit初期化=">
-        <taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="test.classpath" loaderref="dbunit" />
-        <typedef name="queryset" classname="org.dbunit.ant.QuerySet" classpathref="test.classpath" loaderref="dbunit" />
-        <queryset id="set1">
-            <query name="t1set1" sql="select * from t1 where id &gt; @id@" />
-        </queryset>
-    </target>
-    <macrodef name="dboperation">
-        <element name="dbunit-operations" />
-        <sequential>
-            <dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" schema="${db.schema}" classpathref="compile.classpath">
-                <dbconfig>
-                    <property name="datatypeFactory" value="${db.datatype}" />
-                </dbconfig>
-                <dbunit-operations />
-            </dbunit>
-        </sequential>
-    </macrodef>
-    <target name="refresh" depends="dbunit-init" description="flatxmlからrefresh">
-        <dboperation>
-            <dbunit-operations>
-                <operation type="REFRESH" format="flat" src="${in.dir}/${file.flat}" nullToken="[null]" />
-            </dbunit-operations>
-        </dboperation>
-    </target>
-    <target name="refresh-xls" depends="dbunit-init" description="excelからrefresh">
-        <dboperation>
-            <dbunit-operations>
-                <operation type="REFRESH" format="xls" src="${in.dir}/${file.xls}" nullToken="[null]" />
-            </dbunit-operations>
-        </dboperation>
-    </target>
-    <target name="clean_insert" depends="dbunit-init" description="flatxmlからclean_insert">
-        <dboperation>
-            <dbunit-operations>
-                <operation type="CLEAN_INSERT" format="flat" src="${in.dir}/${file.flat}" nullToken="[null]" />
-            </dbunit-operations>
-        </dboperation>
-    </target>
-    <target name="clean_insert-xls" depends="dbunit-init" description="xlsからclean_insert">
-        <dboperation>
-            <dbunit-operations>
-                <operation type="CLEAN_INSERT" format="xls" src="${in.dir}/${file.xls}" nullToken="[null]" />
-            </dbunit-operations>
-        </dboperation>
-    </target>
-    <target name="export" depends="dbunit-init" description="xmlでエクスポート">
-        <dboperation>
-            <dbunit-operations>
-                <export dest="${out.dir}/${file.flat.out}" doctype="${out.dir}/${file.dtd}">
-<!--                    <query name="authname" sql="SELECT * FROM auth" />
+	<import file="${basedir}/build-ivy.xml" />
+	<property name="in.dir" value="${basedir}/resources" />
+	<property name="out.dir" value="${in.dir}" />
+	<path id="ant.classpath">
+		<!--<pathelement location="${basedir}/resources" /> -->
+		<!-- mvn dependency:copy-dependencies -->
+		<!-- maven-ant-task用 -->
+		<fileset dir="lib" includes="*.jar" />
+	</path>
+	<!-- プロパティファイルはANT起動時に指定する -->
+	<target name="mvn-init" unless="compile.classpath" depends="retrieve" xmlns:artifact="urn:maven-artifact-ant">
+		<typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="urn:maven-artifact-ant" classpathref="ant.classpath" />
+		<condition property="maven.repo.local" value="${maven.repo.local}" else="${user.home}/.m2/repository">
+			<isset property="maven.repo.local" />
+		</condition>
+		<echo>maven.repo.local=${maven.repo.local}</echo>
+		<artifact:localRepository id="local.repository" path="${maven.repo.local}" />
+		<artifact:pom file="pom.xml" id="maven.project" />
+		<artifact:dependencies pathId="compile.classpath" filesetId="compile.fileset" useScope="compile">
+			<pom refid="maven.project" />
+			<localRepository refid="local.repository" />
+		</artifact:dependencies>
+		<artifact:dependencies pathId="test.classpath" filesetId="test.fileset" useScope="test">
+			<pom refid="maven.project" />
+			<localRepository refid="local.repository" />
+		</artifact:dependencies>
+		<artifact:dependencies pathId="runtime.classpath" filesetId="runtime.fileset" useScope="runtime">
+			<pom refid="maven.project" />
+			<localRepository refid="local.repository" />
+		</artifact:dependencies>
+	</target>
+	<target name="copy-mvn-lib" depends="mvn-init" description="maven管理ライブラリをlibへコピーする">
+		<copy todir="lib" flatten="true">
+			<fileset refid="runtime.fileset" />
+		</copy>
+	</target>
+	<target name="dbunit-init" depends="mvn-init" description="DBUnit初期化=">
+		<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="test.classpath" loaderref="dbunit" />
+		<typedef name="queryset" classname="org.dbunit.ant.QuerySet" classpathref="test.classpath" loaderref="dbunit" />
+		<queryset id="set1">
+			<query name="t1set1" sql="select * from t1 where id &gt; @id@" />
+		</queryset>
+	</target>
+	<macrodef name="dboperation">
+		<element name="dbunit-operations" />
+		<sequential>
+			<dbunit driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" schema="${db.schema}" classpathref="compile.classpath">
+				<dbconfig>
+					<property name="datatypeFactory" value="${db.datatype}" />
+				</dbconfig>
+				<dbunit-operations />
+			</dbunit>
+		</sequential>
+	</macrodef>
+	<target name="refresh" depends="dbunit-init" description="flatxmlからrefresh">
+		<dboperation>
+			<dbunit-operations>
+				<operation type="REFRESH" format="flat" src="${in.dir}/${file.flat}" nullToken="[null]" />
+			</dbunit-operations>
+		</dboperation>
+	</target>
+	<target name="refresh-xls" depends="dbunit-init" description="excelからrefresh">
+		<dboperation>
+			<dbunit-operations>
+				<operation type="REFRESH" format="xls" src="${in.dir}/${file.xls}" nullToken="[null]" />
+			</dbunit-operations>
+		</dboperation>
+	</target>
+	<target name="clean_insert" depends="dbunit-init" description="flatxmlからclean_insert">
+		<dboperation>
+			<dbunit-operations>
+				<operation type="CLEAN_INSERT" format="flat" src="${in.dir}/${file.flat}" nullToken="[null]" />
+			</dbunit-operations>
+		</dboperation>
+	</target>
+	<target name="clean_insert-xls" depends="dbunit-init" description="xlsからclean_insert">
+		<dboperation>
+			<dbunit-operations>
+				<operation type="CLEAN_INSERT" format="xls" src="${in.dir}/${file.xls}" nullToken="[null]" />
+			</dbunit-operations>
+		</dboperation>
+	</target>
+	<target name="export" depends="dbunit-init" description="xmlでエクスポート">
+		<dboperation>
+			<dbunit-operations>
+				<export dest="${out.dir}/${file.flat.out}" doctype="${out.dir}/${file.dtd}">
+					<!--                    <query name="authname" sql="SELECT * FROM auth" />
                     <queryset refid="set1">
                         <filterset>
                             <filter token="id" value="1000" />
@@ -94,15 +94,25 @@
                     </queryset>
                     <table name="location" />
                     -->
-                </export>
-            </dbunit-operations>
-        </dboperation>
-    </target>
-    <target name="export-dtd" depends="dbunit-init" description="DTDをエクスポート">
-        <dboperation>
-            <dbunit-operations>
-                <export format="dtd" dest="${out.dir}/${file.dtd}" />
-            </dbunit-operations>
-        </dboperation>
-    </target>
+				</export>
+			</dbunit-operations>
+		</dboperation>
+	</target>
+	<target name="export-application" depends="dbunit-init" description="xmlでエクスポート">
+		<dboperation>
+			<dbunit-operations>
+				<export dest="${out.dir}/${file.flat.out}" doctype="${out.dir}/${file.dtd}">
+					<table name="inter_ext_item" />
+					<table name="inter_ext_item_name" />
+				</export>
+			</dbunit-operations>
+		</dboperation>
+	</target>
+	<target name="export-dtd" depends="dbunit-init" description="DTDをエクスポート">
+		<dboperation>
+			<dbunit-operations>
+				<export format="dtd" dest="${out.dir}/${file.dtd}" />
+			</dbunit-operations>
+		</dboperation>
+	</target>
 </project>
