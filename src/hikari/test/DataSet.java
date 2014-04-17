@@ -3,6 +3,7 @@ package hikari.test;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -30,7 +31,7 @@ public class DataSet {
     private static Map<String, Object> mapReplace = new HashMap<String, Object>();
 
     static {
-        mapReplace.put("[null]", null);
+        mapReplace.put("[NULL]", null);
     }
 
     public static IDataSet loadXml(String name, String dtdName, Class<?> clazz)
@@ -38,8 +39,11 @@ public class DataSet {
         // クラスパスへ置く。/はトップレベル
         // IDataSet ds = new FlatXmlDataFileLoader().load(name);
 
-        FlatXmlDataSetBuilder builder = new FlatXmlDataSetBuilder().setMetaDataSetFromDtd(clazz
-                .getResourceAsStream(dtdName));
+        FlatXmlDataSetBuilder builder = new FlatXmlDataSetBuilder();
+
+        if (dtdName != null) {
+            builder.setMetaDataSetFromDtd(clazz.getResourceAsStream(dtdName));
+        }
         FlatXmlDataFileLoader loader = new FlatXmlDataFileLoader(builder);
         loader.addReplacementObjects(mapReplace);
 
@@ -93,7 +97,9 @@ public class DataSet {
             dsOld.addTable(tableName);
         }
         File backupFile = File.createTempFile(BACKUP_FILENAME, ".xml");
-        FlatXmlDataSet.write(dsOld, new FileOutputStream(backupFile));
+        OutputStream out = new FileOutputStream(backupFile);
+        FlatXmlDataSet.write(dsOld, out);
+        out.close();
 
         return backupFile;
     }
@@ -117,7 +123,9 @@ public class DataSet {
             dsOld.addTable(tableName);
         }
         File backupFile = new File(filename);
-        FlatXmlDataSet.write(dsOld, new FileOutputStream(backupFile));
+        OutputStream out = new FileOutputStream(backupFile);
+        FlatXmlDataSet.write(dsOld, out);
+        out.close();
 
         return backupFile;
     }
@@ -159,6 +167,36 @@ public class DataSet {
         // ファイルからテーブル期待値を読む
         
         IDataSet ds = DataSet.loadXls(expectedDataSetName, clazz);
+        assertTable(tableName, ds, connection);
+    }
+
+    /**
+     * <p>[概 要] assertTableXml メソッド。</p>
+     * <p>[詳 細] 指定テーブルについて、期待値データと実データを比較する。XMLデータセット。</p>
+     * <p>[備 考] notnullカラムでassertエラーとなった場合は、dtdにnullを指定する。</p>
+     * 
+     * @param tableName
+     * @param expectedDataSetName
+     * @param dtd
+     * @param clazz
+     * @param connection
+     * @throws SQLException
+     * @throws DatabaseUnitException
+     * @throws IOException
+     */
+    public static void assertTableXml(String tableName, String expectedDataSetName,
+        String dtd, Class<?> clazz, IDatabaseConnection connection) throws SQLException,
+        DatabaseUnitException, IOException {
+
+        // ファイルからテーブル期待値を読む
+
+        IDataSet ds = DataSet.loadXml(expectedDataSetName, dtd, clazz);
+        assertTable(tableName, ds, connection);
+    }
+
+    public static void assertTable(String tableName, IDataSet ds,
+        IDatabaseConnection connection) throws SQLException, DatabaseUnitException {
+
         ITable expectedTable = ds.getTable(tableName);
 
         // データベースから実テーブルを読む
@@ -175,5 +213,29 @@ public class DataSet {
         // テーブルを比較する
         // DataSet内全テーブルの比較もできる
         Assertion.assertEquals(expectedTable, filterdTable);
+    }
+
+    public static void assertTables(String[] tableNames, IDataSet ds,
+        IDatabaseConnection connection) throws SQLException, DatabaseUnitException {
+
+        IDataSet databaseDataSet = connection.createDataSet();
+
+        for (String tableName : tableNames) {
+            ITable expectedTable = ds.getTable(tableName);
+
+            // データベースから実テーブルを読む
+
+            ITable actualTable = databaseDataSet.getTable(tableName);
+
+            // テーブル期待値に含まれているカラムのみを含むテーブルを実テーブルから作成する
+            // 実行時に決まるシーケンス値、日付などを比較対象から外すため
+
+            ITable filterdTable = DefaultColumnFilter.includedColumnsTable(actualTable,
+                expectedTable.getTableMetaData().getColumns());
+
+            // テーブルを比較する
+            // DataSet内全テーブルの比較もできる
+            Assertion.assertEquals(expectedTable, filterdTable);
+        }
     }
 }

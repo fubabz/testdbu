@@ -10,7 +10,7 @@ import java.util.Properties;
  * @author ryo
  * 
  */
-class DBConfig {
+public class DBConfig {
     private String driver;
     private String url;
     private String user;
