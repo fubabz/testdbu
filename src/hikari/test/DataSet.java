@@ -35,7 +35,7 @@ public class DataSet {
     }
 
     public static IDataSet loadXml(String name, String dtdName, Class<?> clazz)
-            throws DataSetException, IOException {
+        throws DataSetException, IOException {
         // クラスパスへ置く。/はトップレベル
         // IDataSet ds = new FlatXmlDataFileLoader().load(name);
 
@@ -68,13 +68,8 @@ public class DataSet {
 
     private static String absPath(String name, Class<?> clazz) {
         if (!name.startsWith("/")) {
-            URL url = clazz.getResource(name);
-            if (url == null) {
-                throw new IllegalArgumentException(name + ": Not found.");
-            }
-            name = "/"
-                + StringUtils.substringAfter(url.toString(), clazz.getResource("/")
-                    .toString());
+            String path = clazz.getPackage().getName().replace('.', '/');
+            name = "/" + path + "/" + name;
         }
         return name;
     }
@@ -108,7 +103,7 @@ public class DataSet {
      * <p>[概 要] saveTables メソッド。</p>
      * <p>[詳 細] 指定テーブルのバックアップファイルを作成する。</p>
      * <p>[備 考] </p>
-     *
+     * 
      * @param filename ファイル名
      * @param connection DB接続
      * @param tableNames テーブル名のリスト
@@ -116,8 +111,8 @@ public class DataSet {
      * @throws IOException
      * @throws DataSetException
      */
-    public static File saveTables(String filename, IDatabaseConnection connection, String... tableNames)
-        throws IOException, DataSetException {
+    public static File saveTables(String filename, IDatabaseConnection connection,
+        String... tableNames) throws IOException, DataSetException {
         QueryDataSet dsOld = new QueryDataSet(connection);
         for (String tableName : tableNames) {
             dsOld.addTable(tableName);
@@ -151,7 +146,7 @@ public class DataSet {
      * <p>[概 要] assertTable メソッド。</p>
      * <p>[詳 細] 指定テーブルについて、期待値データと実データを比較する。</p>
      * <p>[備 考] </p>
-     *
+     * 
      * @param tableName テーブル名
      * @param expectedDataSetName 期待値データファイル名(Excel形式)
      * @param clazz 期待値データファイル名探索用基準クラス
@@ -161,11 +156,11 @@ public class DataSet {
      * @throws DatabaseUnitException
      */
     public static void assertTable(String tableName, String expectedDataSetName,
-        Class<?> clazz, IDatabaseConnection connection) throws 
-        SQLException, DatabaseUnitException {
-        
+        Class<?> clazz, IDatabaseConnection connection) throws SQLException,
+        DatabaseUnitException {
+
         // ファイルからテーブル期待値を読む
-        
+
         IDataSet ds = DataSet.loadXls(expectedDataSetName, clazz);
         assertTable(tableName, ds, connection);
     }
@@ -200,13 +195,13 @@ public class DataSet {
         ITable expectedTable = ds.getTable(tableName);
 
         // データベースから実テーブルを読む
-        
+
         IDataSet databaseDataSet = connection.createDataSet();
         ITable actualTable = databaseDataSet.getTable(tableName);
 
         // テーブル期待値に含まれているカラムのみを含むテーブルを実テーブルから作成する
         // 実行時に決まるシーケンス値、日付などを比較対象から外すため
-        
+
         ITable filterdTable = DefaultColumnFilter.includedColumnsTable(actualTable,
             expectedTable.getTableMetaData().getColumns());
 
