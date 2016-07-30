@@ -2,3 +2,5 @@
 /dtd.xml
 /export.xml
 target/
+/.gradle/
+/build/
