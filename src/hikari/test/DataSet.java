@@ -5,12 +5,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.lang3.StringUtils;
 import org.dbunit.Assertion;
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.database.IDatabaseConnection;
@@ -78,7 +76,7 @@ public class DataSet {
      * <p>[概 要] saveTables メソッド。</p>
      * <p>[詳 細] 指定テーブルのバックアップファイルを作成する。</p>
      * <p>[備 考] </p>
-     * 
+     *
      * @param connection DBUnit DB接続
      * @param tableNames テーブル名のリスト
      * @return バックアップファイル
@@ -103,7 +101,7 @@ public class DataSet {
      * <p>[概 要] saveTables メソッド。</p>
      * <p>[詳 細] 指定テーブルのバックアップファイルを作成する。</p>
      * <p>[備 考] </p>
-     * 
+     *
      * @param filename ファイル名
      * @param connection DB接続
      * @param tableNames テーブル名のリスト
@@ -129,7 +127,7 @@ public class DataSet {
      * <p>[概 要] restoreTables メソッド。</p>
      * <p>[詳 細] バックアップファイルからテーブルデータをDBへ書き戻す。</p>
      * <p>[備 考] </p>
-     * 
+     *
      * @param connection DBUnit DB接続
      * @param backupFile バックアップファイル
      * @throws MalformedURLException
@@ -146,7 +144,7 @@ public class DataSet {
      * <p>[概 要] assertTable メソッド。</p>
      * <p>[詳 細] 指定テーブルについて、期待値データと実データを比較する。</p>
      * <p>[備 考] </p>
-     * 
+     *
      * @param tableName テーブル名
      * @param expectedDataSetName 期待値データファイル名(Excel形式)
      * @param clazz 期待値データファイル名探索用基準クラス
@@ -169,7 +167,7 @@ public class DataSet {
      * <p>[概 要] assertTableXml メソッド。</p>
      * <p>[詳 細] 指定テーブルについて、期待値データと実データを比較する。XMLデータセット。</p>
      * <p>[備 考] notnullカラムでassertエラーとなった場合は、dtdにnullを指定する。</p>
-     * 
+     *
      * @param tableName
      * @param expectedDataSetName
      * @param dtd
