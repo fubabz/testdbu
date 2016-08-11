@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE dataset SYSTEM "./dtd.xml">
+<!-- <!DOCTYPE dataset SYSTEM "./dtd.xml"> -->
 <dataset>
     <T1 ID="100" NAME="高橋" AGE="25" />
     <T1 ID="101" NAME="中島" AGE="30" />

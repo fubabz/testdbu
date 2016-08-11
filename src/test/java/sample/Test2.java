@@ -1,4 +1,4 @@
-package hikari.test;
+package sample;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -17,6 +17,13 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import hikari.dbunit.DBConfig;
+import hikari.dbunit.DBConnection;
+import hikari.dbunit.DataSet;
+
+
+
+
 public class Test2 {
     private static final Logger logger = LoggerFactory.getLogger(Test2.class);
 
@@ -32,10 +39,11 @@ public class Test2 {
     public void testLoadXml() throws DatabaseUnitException, Exception {
         logger.info("testLoadXml開始");
 
-        IDataSet ds = DataSet.loadXml("/data2.xml", "/dtd.xml", getClass());
+        IDataSet ds = DataSet.loadXml("/data2.xml", null, getClass());
+//        IDataSet ds = DataSet.loadXml("/data2.xml", "/dtd.xml", getClass());
 
         XlsDataSetWriter writer = new XlsDataSetWriter();
-        writer.write(ds, new FileOutputStream("target/out.xls"));
+        writer.write(ds, new FileOutputStream("build/out.xls"));
 
         try {
             DatabaseOperation.CLEAN_INSERT.execute(connection, ds);
@@ -46,14 +54,14 @@ public class Test2 {
 
     @Test
     public void testLoadXls() throws DatabaseUnitException, Exception {
-    
+
         logger.info("testLoadXls開始");
-    
+
         IDataSet ds = DataSet.loadXls("/data1.xls", this.getClass());
-    
+
         XlsDataSetWriter writer = new XlsDataSetWriter();
-        writer.write(ds, new FileOutputStream("target/out3.xls"));
-    
+        writer.write(ds, new FileOutputStream("build/out3.xls"));
+
         try {
             // データベースにあってデータセットにないテーブルは影響を受けない
             DatabaseOperation.CLEAN_INSERT.execute(connection, ds);
@@ -66,8 +74,10 @@ public class Test2 {
     public void testAssertXml() throws DatabaseUnitException, Exception {
         logger.info("開始");
 
-        IDataSet ds = DataSet.loadXml("/data2.xml", "/dtd.xml", getClass());
-        IDataSet ds2 = DataSet.loadXml("/hikari/test/data3.xml", "/dtd.xml", getClass());
+        IDataSet ds = DataSet.loadXml("/data2.xml", null, getClass());
+        IDataSet ds2 = DataSet.loadXml("/data3.xml", null, getClass());
+//        IDataSet ds = DataSet.loadXml("/data2.xml", "/dtd.xml", getClass());
+//        IDataSet ds2 = DataSet.loadXml("/hikari/test/data3.xml", "/dtd.xml", getClass());
         // IDataSet ds2 = DataSet.loadXml("/hikari/test/data3.xml", "/dtd.xml",
         // getClass());
 
@@ -81,7 +91,7 @@ public class Test2 {
 
         ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actual, expected
                 .getTableMetaData().getColumns());
-      
+
         Assertion.assertEquals(expected, filteredTable);
     }
 

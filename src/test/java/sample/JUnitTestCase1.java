@@ -1,4 +1,4 @@
-package hikari.test;
+package sample;
 
 import java.io.File;
 import java.sql.DriverManager;
@@ -16,25 +16,25 @@ import org.junit.Test;
 
 /**
  * DbUnitサイトのサンプル DbTestCaseを拡張しない場合
- * 
+ *
  * @author ryo
- * 
+ *
  */
 public class JUnitTestCase1 extends TestCase {
     java.sql.Connection con;
 
     private static java.sql.Connection getConnection() throws Exception {
-        Class.forName("org.postgresql.Driver");
+        Class.forName("org.h2.Driver");
         java.sql.Connection connection = DriverManager.getConnection(
-                "jdbc:postgresql:Training.dbunit", "postgres", "");
+                "jdbc:h2:./db/sample", "sa", "");
         return connection;
     }
 
     /*
      * 自分でDBオペレーションを実行する場合
-     * 
+     *
      * (non-Javadoc)
-     * 
+     *
      * @see junit.framework.TestCase#setUp()
      */
     @Override
@@ -45,7 +45,8 @@ public class JUnitTestCase1 extends TestCase {
         IDatabaseConnection connection = new DatabaseConnection(getConnection());
 
         // initialize your dataset here
-        IDataSet dataSet = new XlsDataSet(new File("ss"));
+        IDataSet dataSet = new XlsDataSet(getClass().getResourceAsStream("/data1.xls"));
+//        IDataSet dataSet = new XlsDataSet(new File("ss"));
 
         try {
             DatabaseOperation.CLEAN_INSERT.execute(connection, dataSet);
@@ -58,7 +59,7 @@ public class JUnitTestCase1 extends TestCase {
 
     /**
      * IDatabaseTester を使う場合
-     * 
+     *
      * @throws Exception
      */
     protected void setUpByTester() throws Exception {

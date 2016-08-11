@@ -1,4 +1,4 @@
-package hikari.test;
+package sample;
 
 import java.io.FileInputStream;
 
@@ -11,18 +11,18 @@ import org.junit.Test;
 
 /**
  * DbUnitサイトのサンプル DBTestCase を拡張する場合
- * 
+ *
  * @author ryo
- * 
+ *
  */
 public class DbTestCase1 extends DBTestCase {
 
     public DbTestCase1(String name) {
         super(name);
         System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_DRIVER_CLASS,
-                "org.hsqldb.jdbcDriver");
+                "org.h2.Driver");
         System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_CONNECTION_URL,
-                "jdbc:hsqldb:sample");
+                "jdbc:h2:./db/sample");
         System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_USERNAME, "sa");
         System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_PASSWORD, "");
         // System.setProperty( PropertiesBasedJdbcDatabaseTester.DBUNIT_SCHEMA,
@@ -31,7 +31,8 @@ public class DbTestCase1 extends DBTestCase {
 
     @Override
     protected IDataSet getDataSet() throws Exception {
-        return new FlatXmlDataSetBuilder().build(new FileInputStream("dataset.xml"));
+        return new FlatXmlDataSetBuilder().build(getClass().getResourceAsStream("/data2.xml"));
+//        return new FlatXmlDataSetBuilder().build(new FileInputStream("dataset.xml"));
     }
 
     @Override
