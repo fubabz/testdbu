@@ -1,4 +1,5 @@
-package hikari.test;
+package hikari.dbunit;
+
 
 import java.io.File;
 import java.io.FileOutputStream;
