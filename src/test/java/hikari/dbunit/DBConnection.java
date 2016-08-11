@@ -1,4 +1,5 @@
-package hikari.test;
+package hikari.dbunit;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;

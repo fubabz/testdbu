@@ -1,4 +1,5 @@
-package hikari.test;
+package hikari.dbunit;
+
 
 import java.io.IOException;
 import java.io.InputStream;

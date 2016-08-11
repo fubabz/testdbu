@@ -1,7 +1,8 @@
+package hikari.dbunit;
 /**
  * 
  */
-package hikari.test;
+
 
 import java.io.FileInputStream;
 
