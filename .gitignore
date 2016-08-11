@@ -5,3 +5,7 @@ target/
 /.gradle/
 /build/
 /bin/
+/.classpath
+/account.erm
+/sample.erm
+/sample.sql
