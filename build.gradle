@@ -103,21 +103,3 @@ class DbunitTask extends DefaultTask {
         }
     }
 }
-
-task dbunit << {
-    ant.taskdef(name: 'dbunit',
-    classname: 'org.dbunit.ant.DbUnitTask',
-    classpath: configurations.testCompile.asPath)
-
-    ant.dbunit(driver: db.driver,
-    url: db.url,
-    userid: db.user,
-    password: db.password,
-    schema: db.schema
-    ) {
-        dbconfig(){}
-        operation(type: 'REFRESH', format: 'flat',
-        src: './src/test/resources/data2.xml', nullToken: '[null]'){}
-    }
-}
-
