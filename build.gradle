@@ -55,6 +55,55 @@ flyway {
     user = db.user
 }
 
+task dbrefresh(type: DbunitTask) { src = './src/test/resources/data2.xml' }
+task dbexport(type: DbunitTask) {
+    type = 'export'
+    dest = './src/test/resources/out.xml'
+    doctype = './src/test/resources/outdtd.xml'
+}
+
+class DbunitTask extends DefaultTask {
+    def db = project.db
+    String src = ''
+    String type = 'REFRESH'
+    String format = 'flat'
+    String nullToken = '[null]'
+    String dest
+    String doctype
+    String datatypeFactory = 'org.dbunit.ext.h2.H2DataTypeFactory'
+
+    @TaskAction
+    def exec() {
+        ant.taskdef(name: 'dbunit',
+        classname: 'org.dbunit.ant.DbUnitTask',
+        classpath: project.configurations.testCompile.asPath)
+
+        ant.dbunit(driver: db.driver,
+        url: db.url,
+        userid: db.user,
+        password: db.password,
+        schema: db.schema,
+        classpath: project.configurations.compile.asPath
+        ) {
+            dbconfig(){
+                property(name: 'datatypeFactory', value: datatypeFactory)
+            }
+            switch (type){
+                case 'export':
+                    export(dest: dest, doctype: doctype){ table(name: 'T1') }
+                    break;
+                case 'compare':
+                    compare()
+                    break;
+                default:
+                    operation(type: type, format: format,
+                    src: src, nullToken: nullToken){}
+                    break;
+            }
+        }
+    }
+}
+
 task dbunit << {
     ant.taskdef(name: 'dbunit',
     classname: 'org.dbunit.ant.DbUnitTask',
