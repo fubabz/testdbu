@@ -31,7 +31,8 @@ import org.junit.Test;
  *
  */
 public class DemoDBUnit {
-    private String testDir = "src/test/resources";
+    private String testDir = "/tmp";
+//    private String testDir = "src/test/resources";
     private String dbFile = "dbDump.xml";
     private String testTableName = "t1";
 
