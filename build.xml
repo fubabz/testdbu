@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="database unit test" basedir=".">
 	<import file="${basedir}/build-ivy.xml" />
-	<property name="in.dir" value="${basedir}/resources" />
+	<property name="in.dir" value="${basedir}/src/test/resources" />
 	<property name="out.dir" value="${in.dir}" />
 	<path id="ant.classpath">
 		<!--<pathelement location="${basedir}/resources" /> -->

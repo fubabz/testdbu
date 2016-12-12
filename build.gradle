@@ -1,8 +1,19 @@
+//buildscript {
+//    dependencies {
+//        classpath group: 'com.h2database', name: 'h2', version: '1.4.192'
+//        //         classpath 'com.h2database:h2:1.4.191'
+//    }
+//}
+
 buildscript {
-    dependencies {
-        classpath group: 'com.h2database', name: 'h2', version: '1.4.192'
-        //         classpath 'com.h2database:h2:1.4.191'
-    }
+  repositories {
+     mavenLocal()
+     mavenCentral()
+  }
+  dependencies {
+     classpath "com.ferigma:dbunit-gradle-plugin:0.1.0"
+     classpath "com.h2database:h2:1.4.179"
+  }
 }
 
 plugins { id "org.flywaydb.flyway" version "4.0.3" }
@@ -26,12 +37,15 @@ def defaultEncoding = 'UTF-8'
 
 ext {
     db = [
-        url: 'jdbc:h2:tcp://localhost/sample',
+        url: 'jdbc:postgresql://localhost:5432/postgres',
+//        url: 'jdbc:h2:tcp://localhost/sample',
         //'jdbc:h2:tcp://localhost/~/db/sample'
-        user:'sa',
-        password: '',
-        schema:'public',
-        driver:'org.h2.Driver']
+        user:'postgres',
+        password: 'postgres',
+        schema:'local',
+//        driver:'org.h2.Driver'
+		driver:'org.postgresql.Driver'
+		]
 }
 
 repositories { mavenCentral() }
@@ -55,7 +69,9 @@ flyway {
     user = db.user
 }
 
-task dbrefresh(type: DbunitTask) { src = './src/test/resources/data2.xml' }
+task dbrefresh(type: DbunitTask) { src = './src/test/resources/live.xml'
+	type = 'CLEAN_INSERT'
+}
 task dbexport(type: DbunitTask) {
     type = 'export'
     dest = './src/test/resources/out.xml'
@@ -103,3 +119,19 @@ class DbunitTask extends DefaultTask {
         }
     }
 }
+
+//dbunit {
+//   username = "sa"
+//   password = "sa"
+//   url = "jdbc:h2:/tmp/h2_test"
+//   driver = "org.h2.Driver"
+//   dataTypeFactoryName = "org.dbunit.ext.h2.H2DataTypeFactory"
+//}
+
+//task populateTestDb(type: com.ferigma.gradle.dbunit.tasks.OperationTask) {
+//   sources = [
+//      new com.ferigma.gradle.dbunit.tasks.vo.OperationSource(
+//      transaction: true, type: "CLEAN_INSERT", format: "xml",
+//      file: "$rootDir/db/sample-data.xml")
+//   ]
+//}
