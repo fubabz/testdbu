@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-  <context id="context1">
-    <jdbcConnection connectionURL="jdbc:postgresql://localhost/postgres" driverClass="org.postgresql.Driver" password="postgres" userId="postgres" />
-    <javaModelGenerator targetPackage="test.dto" targetProject="testdbunit" />
-    <sqlMapGenerator targetPackage="test.mapper" targetProject="testdbunit" />
-    <javaClientGenerator targetPackage="test.dao" targetProject="testdbunit" type="XMLMAPPER" />
-    <table schema="local" tableName="t_staff">
+    <context id="context1">
+        <jdbcConnection connectionURL="jdbc:postgresql://localhost/postgres"
+            driverClass="org.postgresql.Driver" password="postgres" userId="postgres" />
+        <javaModelGenerator targetPackage="jp.co.livemax.common.dto.generated"
+            targetProject="testdbunit/src/main/java" />
+        <sqlMapGenerator targetPackage="mappings.generated"
+            targetProject="testdbunit/src/main/resources" />
+        <javaClientGenerator targetPackage="jp.co.livemax.common.dao.generated"
+            targetProject="testdbunit/src/main/java" type="XMLMAPPER" />
+        <table schema="sample_remote" tableName="%">
 <!--       <columnOverride column="???" property="???" /> -->
-    </table>
-  </context>
+        </table>
+    </context>
 </generatorConfiguration>
