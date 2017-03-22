@@ -11,8 +11,8 @@ buildscript {
      mavenCentral()
   }
   dependencies {
-     classpath "com.ferigma:dbunit-gradle-plugin:0.1.0"
-     classpath "com.h2database:h2:1.4.179"
+//     classpath "com.ferigma:dbunit-gradle-plugin:0.1.0"
+//     classpath "com.h2database:h2:1.4.179"
      classpath 'org.flywaydb:flyway-gradle-plugin:4.0.3'
   }
 }
