@@ -38,11 +38,11 @@ def defaultEncoding = 'UTF-8'
 
 ext {
     db = [
-            url     : 'jdbc:postgresql://localhost:5432/ryo',
+            url     : 'jdbc:postgresql://localhost:5432/postgres',
             // url: 'jdbc:h2:tcp://localhost/sample',
             //'jdbc:h2:tcp://localhost/~/db/sample'
             user    : 'postgres',
-            password: '',
+            password: 'fjdksl',
             schema  : 'public',
             //        driver:'org.h2.Driver'
             driver  : 'org.postgresql.Driver'
@@ -57,7 +57,9 @@ dependencies {
     compile group: 'log4j', name: 'log4j', version: '1.2.17'
     compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.21'
     compile group: 'com.h2database', name: 'h2', version: '1.4.192'
-    compile group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
+// https://mvnrepository.com/artifact/org.postgresql/postgresql
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.0.0'
+//    compile group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
     compile group: 'org.apache.poi', name: 'poi', version: '3.2-FINAL'
     // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
     compile group: 'org.flywaydb', name: 'flyway-core', version: '4.0.3'
@@ -101,16 +103,19 @@ task wrapper(type: Wrapper) {
 
 
 task dbrefresh(type: DbunitTask) {
-    src = './src/test/resources/live.xml'
     type = 'CLEAN_INSERT'
+    format = 'xls'
+    // xlsx は入力可能
+    src = './src/test/resources/out.xlsx'
 }
 
 task dbexport(type: DbunitTask) {
     type = 'export'
-    format = 'xls'
-    dest = './src/test/resources/out.xlsx'
-//    format = 'flat'
-//    dest = './src/test/resources/out.xml'
+    // xlsx で出力できない
+//    format = 'xls'
+//    dest = './src/test/resources/out.xls'
+    format = 'flat'
+    dest = './src/test/resources/out.xml'
     doctype = './src/test/resources/outdtd.xml'
     tableNames = ['t1', 't2']
 }
