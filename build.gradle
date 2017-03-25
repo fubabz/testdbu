@@ -42,7 +42,7 @@ ext {
             // url: 'jdbc:h2:tcp://localhost/sample',
             //'jdbc:h2:tcp://localhost/~/db/sample'
             user    : 'postgres',
-            password: 'fjdksl',
+            password: '',
             schema  : 'public',
             //        driver:'org.h2.Driver'
             driver  : 'org.postgresql.Driver'
