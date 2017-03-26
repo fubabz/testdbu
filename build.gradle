@@ -21,9 +21,9 @@ plugins { id "org.flywaydb.flyway" version "4.0.3" }
 
 apply plugin: 'java'
 apply plugin: 'groovy'
-apply plugin: 'maven'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
+//apply plugin: 'maven'
+//apply plugin: 'eclipse'
+//apply plugin: 'idea'
 
 group = 'testdbunit'
 version = '0.0.1-SNAPSHOT'
@@ -39,11 +39,11 @@ def defaultEncoding = 'UTF-8'
 ext {
     // TODO to property file
     db = [
-            url     : 'jdbc:postgresql://localhost:5432/ryo',
+            url     : 'jdbc:postgresql://localhost:5432/postgres',
             // url: 'jdbc:h2:tcp://localhost/sample',
             //'jdbc:h2:tcp://localhost/~/db/sample'
             user    : 'postgres',
-            password: '',
+            password: 'postgres',
             schema  : 'public',
             //        driver:'org.h2.Driver'
             driver  : 'org.postgresql.Driver'
@@ -81,23 +81,20 @@ task deleteMybatis(type: Delete) {
 
 flyway {
     url = db.url
-    user = db.user
-}
-
-/*
-  flyway {
-       user = 'postgres'
-      password = 'postgres'
-      url = 'jdbc:postgresql://localhost:5432/postgres'
-      locations = ['classpath:db.migration']
-      schemas = ['local', 'remote_bp']
-      baselineVersion = 1
+//    user = db.user
+    user = 'postgres'
+    password = 'postgres'
+//    url = 'jdbc:postgresql://localhost:5432/postgres'
+    // clean > build しないと反映されない
+//    locations = ['classpath:db.migration']
+    schemas = ['public']
+    baselineVersion = 1
 
     // 接続先を変えたい場合はgradle実行時にプログラム引数を与える。以下例:
     // -Pflyway.user=postgres -Pflyway.password=postgres -Pflyway.schemas=local -Pflyway.url=jdbc:postgresql://10.12.1.61:5432/livemax
     // -Pflyway.user=kikan_web_dbuser -Pflyway.password=J3FrxKgE -Pflyway.schemas=local -Pflyway.url=jdbc:postgresql://10.12.1.11:5432/kikan_db
-  }
-*/
+}
+
 task wrapper(type: Wrapper) {
     gradleVersion = '3.0'
 }
