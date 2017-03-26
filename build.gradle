@@ -37,8 +37,9 @@ def defaultEncoding = 'UTF-8'
 [compileJava, compileTestJava]*.options*.encoding = defaultEncoding
 
 ext {
+    // TODO to property file
     db = [
-            url     : 'jdbc:postgresql://localhost:5432/postgres',
+            url     : 'jdbc:postgresql://localhost:5432/ryo',
             // url: 'jdbc:h2:tcp://localhost/sample',
             //'jdbc:h2:tcp://localhost/~/db/sample'
             user    : 'postgres',
@@ -117,7 +118,7 @@ task dbexport(type: DbunitTask) {
     format = 'flat'
     dest = './src/test/resources/out.xml'
     doctype = './src/test/resources/outdtd.xml'
-    tableNames = ['t1', 't2']
+    tableNames = ['t1']
 }
 
 class DbunitTask extends DefaultTask {
@@ -130,8 +131,9 @@ class DbunitTask extends DefaultTask {
     String dest
     String doctype
     String datatypeFactory = 'org.dbunit.ext.h2.H2DataTypeFactory'
-    // TODO ant 子要素を渡す方法
-    // def tables ={table(name: 'st1')}
+    // ant 子要素を直接渡す場合
+    def tables = { table(name: 'xxx') }
+    // テーブル名を渡す場合
     def tableNames = []
 
     @TaskAction
@@ -147,9 +149,14 @@ class DbunitTask extends DefaultTask {
 
             switch (type) {
                 case 'export':
+                    // テーブル名のみ渡す場合
                     export(dest: dest, doctype: doctype, format: format, encoding: encoding) {
                         for (name in tableNames) table(name: name)
                     }
+                    break
+                case 'exportclo':
+                    // closure で直接渡す場合
+                    export([dest: dest, doctype: doctype, format: format, encoding: encoding], tables)
                     break
                 case 'compare':
                     compare()
