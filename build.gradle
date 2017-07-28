@@ -115,7 +115,27 @@ task dbexport(type: DbunitTask) {
     format = 'flat'
     dest = './src/test/resources/out.xml'
     doctype = './src/test/resources/outdtd.xml'
-    tableNames = ['t1']
+    tableNames = ['table']
+}
+
+task dbexportJusho(type: DbunitTask) {
+    type = 'export'
+    // xlsx で出力できない
+//    format = 'xls'
+//    dest = './src/test/resources/out.xls'
+    format = 'flat'
+    dest = './src/test/resources/jusho.xml'
+    tableNames = ['t_jusho']
+}
+
+task dbexportBank(type: DbunitTask) {
+    type = 'export'
+    // xlsx で出力できない
+//    format = 'xls'
+//    dest = './src/test/resources/out.xls'
+    format = 'flat'
+    dest = './src/test/resources/bank.xml'
+    tableNames = ['t_bank']
 }
 
 class DbunitTask extends DefaultTask {
