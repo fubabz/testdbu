@@ -10,9 +10,11 @@ buildscript {
         mavenLocal()
         mavenCentral()
     }
-    dependencies { //     classpath "com.ferigma:dbunit-gradle-plugin:0.1.0"
-        //     classpath "com.h2database:h2:1.4.179"
-        classpath 'org.flywaydb:flyway-gradle-plugin:4.0.3' }
+    dependencies {
+//     classpath "com.ferigma:dbunit-gradle-plugin:0.1.0"
+//     classpath "com.h2database:h2:1.4.179"
+        classpath 'org.flywaydb:flyway-gradle-plugin:4.0.3'
+    }
 }
 
 plugins { id "org.flywaydb.flyway" version "4.0.3" }
@@ -37,14 +39,14 @@ def defaultEncoding = 'UTF-8'
 ext {
     // TODO to property file
     db = [
-        url     : 'jdbc:postgresql://localhost:5432/postgres',
-        // url: 'jdbc:h2:tcp://localhost/sample',
-        //'jdbc:h2:tcp://localhost/~/db/sample'
-        user    : 'postgres',
-        password: 'postgres',
-        schema  : 'public',
-        //        driver:'org.h2.Driver'
-        driver  : 'org.postgresql.Driver'
+            url     : 'jdbc:postgresql://localhost:5432/postgres',
+            // url: 'jdbc:h2:tcp://localhost/sample',
+            //'jdbc:h2:tcp://localhost/~/db/sample'
+            user    : 'postgres',
+            password: 'postgres',
+            schema  : 'public',
+            //        driver:'org.h2.Driver'
+            driver  : 'org.postgresql.Driver'
     ]
 }
 
@@ -56,9 +58,9 @@ dependencies {
     compile group: 'log4j', name: 'log4j', version: '1.2.17'
     compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.21'
     compile group: 'com.h2database', name: 'h2', version: '1.4.192'
-    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+// https://mvnrepository.com/artifact/org.postgresql/postgresql
     compile group: 'org.postgresql', name: 'postgresql', version: '42.0.0'
-    //    compile group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
+//    compile group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
     compile group: 'org.apache.poi', name: 'poi', version: '3.2-FINAL'
     // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
     compile group: 'org.flywaydb', name: 'flyway-core', version: '4.0.3'
@@ -66,6 +68,7 @@ dependencies {
     compile('org.mybatis.generator:mybatis-generator-core:1.3.5')
     testCompile group: 'org.dbunit', name: 'dbunit', version: '2.5.3'
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile('com.github.springtestdbunit:spring-test-dbunit:1.3.0') // spring-test-dbunit
 }
 
 task deleteMybatis(type: Delete) {
@@ -79,12 +82,12 @@ task deleteMybatis(type: Delete) {
 
 flyway {
     url = db.url
-    //    user = db.user
+//    user = db.user
     user = 'postgres'
     password = 'postgres'
-    //    url = 'jdbc:postgresql://localhost:5432/postgres'
+//    url = 'jdbc:postgresql://localhost:5432/postgres'
     // clean > build しないと反映されない
-    //    locations = ['classpath:db.migration']
+//    locations = ['classpath:db.migration']
     schemas = ['public']
     baselineVersion = 1
 
@@ -93,7 +96,9 @@ flyway {
     // -Pflyway.user=kikan_web_dbuser -Pflyway.password=J3FrxKgE -Pflyway.schemas=local -Pflyway.url=jdbc:postgresql://10.12.1.11:5432/kikan_db
 }
 
-task wrapper(type: Wrapper) { gradleVersion = '3.5' }
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.5' 
+}
 
 
 task dbrefresh(type: DbunitTask) {
@@ -106,19 +111,32 @@ task dbrefresh(type: DbunitTask) {
 task dbexport(type: DbunitTask) {
     type = 'export'
     // xlsx で出力できない
-    //    format = 'xls'
-    //    dest = './src/test/resources/out.xls'
+//    format = 'xls'
+//    dest = './src/test/resources/out.xls'
     format = 'flat'
     dest = './src/test/resources/out.xml'
     doctype = './src/test/resources/outdtd.xml'
-    tableNames = ['t1']
+    tableNames = ['table']
+}
 
-    //    action={
-    //        export(dest: dest, doctype: doctype, format: format, encoding: 'UTF-8') {
-    //            for (name in tableNames) table(name: name)
-    //        }
-    //    }
+task dbexportJusho(type: DbunitTask) {
+    type = 'export'
+    // xlsx で出力できない
+//    format = 'xls'
+//    dest = './src/test/resources/out.xls'
+    format = 'flat'
+    dest = './src/test/resources/jusho.xml'
+    tableNames = ['t_jusho']
+}
 
+task dbexportBank(type: DbunitTask) {
+    type = 'export'
+    // xlsx で出力できない
+//    format = 'xls'
+//    dest = './src/test/resources/out.xls'
+    format = 'flat'
+    dest = './src/test/resources/bank.xml'
+    tableNames = ['t_bank']
 }
 
 class DbunitTask extends DefaultTask {
@@ -141,10 +159,10 @@ class DbunitTask extends DefaultTask {
     def exec() {
         //        ant {
         ant.taskdef(name: 'dbunit', classname: 'org.dbunit.ant.DbUnitTask',
-        classpath: project.configurations.testCompile.asPath)
+                classpath: project.configurations.testCompile.asPath)
 
         ant.dbunit(driver: db.driver, url: db.url, userid: db.user, password: db.password, schema: db.schema,
-        classpath: project.configurations.compile.asPath) {
+                classpath: project.configurations.compile.asPath) {
             dbconfig() {
                 property(name: 'datatypeFactory', value: datatypeFactory)
             }
@@ -174,10 +192,8 @@ class DbunitTask extends DefaultTask {
                 ant.operation(type: type, format: format, src: src, nullToken: nullToken) {}
                 break
         }
-
     }
 }
-
 
 //dbunit {
 //   username = "sa"
