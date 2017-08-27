@@ -21,9 +21,9 @@ plugins { id "org.flywaydb.flyway" version "4.0.3" }
 
 apply plugin: 'java'
 apply plugin: 'groovy'
-apply plugin: 'maven'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
+//apply plugin: 'maven'
+//apply plugin: 'eclipse'
+//apply plugin: 'idea'
 
 group = 'testdbunit'
 version = '0.0.1-SNAPSHOT'
@@ -37,12 +37,13 @@ def defaultEncoding = 'UTF-8'
 [compileJava, compileTestJava]*.options*.encoding = defaultEncoding
 
 ext {
+    // TODO to property file
     db = [
             url     : 'jdbc:postgresql://localhost:5432/postgres',
             // url: 'jdbc:h2:tcp://localhost/sample',
             //'jdbc:h2:tcp://localhost/~/db/sample'
             user    : 'postgres',
-            password: 'fjdksl',
+            password: 'postgres',
             schema  : 'public',
             //        driver:'org.h2.Driver'
             driver  : 'org.postgresql.Driver'
@@ -67,6 +68,7 @@ dependencies {
     compile('org.mybatis.generator:mybatis-generator-core:1.3.5')
     testCompile group: 'org.dbunit', name: 'dbunit', version: '2.5.3'
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile('com.github.springtestdbunit:spring-test-dbunit:1.3.0') // spring-test-dbunit
 }
 
 task deleteMybatis(type: Delete) {
@@ -80,25 +82,22 @@ task deleteMybatis(type: Delete) {
 
 flyway {
     url = db.url
-    user = db.user
-}
-
-/*
-  flyway {
-       user = 'postgres'
-      password = 'postgres'
-      url = 'jdbc:postgresql://localhost:5432/postgres'
-      locations = ['classpath:db.migration']
-      schemas = ['local', 'remote_bp']
-      baselineVersion = 1
+//    user = db.user
+    user = 'postgres'
+    password = 'postgres'
+//    url = 'jdbc:postgresql://localhost:5432/postgres'
+    // clean > build しないと反映されない
+//    locations = ['classpath:db.migration']
+    schemas = ['public']
+    baselineVersion = 1
 
     // 接続先を変えたい場合はgradle実行時にプログラム引数を与える。以下例:
     // -Pflyway.user=postgres -Pflyway.password=postgres -Pflyway.schemas=local -Pflyway.url=jdbc:postgresql://10.12.1.61:5432/livemax
     // -Pflyway.user=kikan_web_dbuser -Pflyway.password=J3FrxKgE -Pflyway.schemas=local -Pflyway.url=jdbc:postgresql://10.12.1.11:5432/kikan_db
-  }
-*/
+}
+
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.0'
+    gradleVersion = '3.5' 
 }
 
 
@@ -117,7 +116,27 @@ task dbexport(type: DbunitTask) {
     format = 'flat'
     dest = './src/test/resources/out.xml'
     doctype = './src/test/resources/outdtd.xml'
-    tableNames = ['t1', 't2']
+    tableNames = ['table']
+}
+
+task dbexportJusho(type: DbunitTask) {
+    type = 'export'
+    // xlsx で出力できない
+//    format = 'xls'
+//    dest = './src/test/resources/out.xls'
+    format = 'flat'
+    dest = './src/test/resources/jusho.xml'
+    tableNames = ['t_jusho']
+}
+
+task dbexportBank(type: DbunitTask) {
+    type = 'export'
+    // xlsx で出力できない
+//    format = 'xls'
+//    dest = './src/test/resources/out.xls'
+    format = 'flat'
+    dest = './src/test/resources/bank.xml'
+    tableNames = ['t_bank']
 }
 
 class DbunitTask extends DefaultTask {
@@ -130,12 +149,15 @@ class DbunitTask extends DefaultTask {
     String dest
     String doctype
     String datatypeFactory = 'org.dbunit.ext.h2.H2DataTypeFactory'
-    // TODO ant 子要素を渡す方法
-    // def tables ={table(name: 'st1')}
+    // ant 子要素を直接渡す場合
+    def tables = { table(name: 'xxx') }
+    // テーブル名を渡す場合
     def tableNames = []
+    //    def actiontast1(ant){ant.export()}
 
     @TaskAction
     def exec() {
+        //        ant {
         ant.taskdef(name: 'dbunit', classname: 'org.dbunit.ant.DbUnitTask',
                 classpath: project.configurations.testCompile.asPath)
 
@@ -144,20 +166,31 @@ class DbunitTask extends DefaultTask {
             dbconfig() {
                 property(name: 'datatypeFactory', value: datatypeFactory)
             }
+            taskByType(type, ant)
+            //            action.delegate = ant
+            //            actiontask1(ant)
+        }
+    }
+    //    }
 
-            switch (type) {
-                case 'export':
-                    export(dest: dest, doctype: doctype, format: format, encoding: encoding) {
-                        for (name in tableNames) table(name: name)
-                    }
-                    break
-                case 'compare':
-                    compare()
-                    break
-                default:
-                    operation(type: type, format: format, src: src, nullToken: nullToken) {}
-                    break
-            }
+        def taskByType(type, ant){
+        switch (type) {
+            case 'export':
+            // テーブル名のみ渡す場合
+                ant.export(dest: dest, doctype: doctype, format: format, encoding: encoding) {
+                    for (name in tableNames) table(name: name)
+                }
+                break
+            case 'exportclo':
+            // closure で直接渡す場合
+                ant.export([dest: dest, doctype: doctype, format: format, encoding: encoding], tables)
+                break
+            case 'compare':
+                ant.compare()
+                break
+            default:
+                ant.operation(type: type, format: format, src: src, nullToken: nullToken) {}
+                break
         }
     }
 }
