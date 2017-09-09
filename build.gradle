@@ -135,7 +135,7 @@ class DbunitTask extends DefaultTask {
     def tables = { table(name: 'xxx') }
     // テーブル名を渡す場合
     def tableNames = []
-    //    def actiontast1(ant){ant.export()}
+    def actiontast1 = ant.export()
 
     @TaskAction
     def exec() {
@@ -148,9 +148,9 @@ class DbunitTask extends DefaultTask {
             dbconfig() {
                 property(name: 'datatypeFactory', value: datatypeFactory)
             }
-            taskByType(type, ant)
+//            taskByType(type, ant)
             //            action.delegate = ant
-            //            actiontask1(ant)
+                        actiontast1
         }
     }
     //    }
