@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ivy-module version="1.0">
+<ivy-module version="2.0">
 	<!--<ivy-module version="1.0" xmlns="http://ant.apache.org/ivy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 		xsi:schemaLocation="file:///opt/Java/ivy.xsd"> -->
-	<info organisation="fam.hikari" module="MODULE" />
-	<configurations>
-		<conf name="compile" />
-		<conf name="runtime" extends="compile" />
-		<conf name="test" extends="compile" />
-	</configurations>
-	<dependencies defaultconf="compile-&gt;default">
+	<!-- <info organisation="org.apache" module="hello-ivy"/> -->
+	<info organisation="hikari" module="testdbunit" />
+	<!-- <configurations> -->
+	<!-- <conf name="compile" /> -->
+	<!-- <conf name="runtime" extends="compile" /> -->
+	<!-- <conf name="test" extends="compile" /> -->
+	<!-- </configurations> -->
+	<dependencies>
+		<!-- <dependencies defaultconf="compile-&gt;default"> -->
+		<!-- https://mvnrepository.com/artifact/org.apache.maven/maven-ant-tasks -->
 		<dependency org="org.apache.maven" name="maven-ant-tasks"
-			rev="latest.integration" conf="compile-&gt;default" />
+			rev="2.1.3" />
+		<!-- <dependency org="org.apache.maven" name="maven-ant-tasks" -->
+		<!-- rev="latest.integration" conf="compile-&gt;default" /> -->
+		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+		<dependency org="com.h2database" name="h2" rev="1.4.196" />
 	</dependencies>
 </ivy-module>
